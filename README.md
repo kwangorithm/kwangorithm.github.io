@@ -1,4 +1,6 @@
 # kwangorithm.github.io
+# 필요한 명령 모음
+## git
 git clone 후 해당 폴더에서, 
 1. rm -rf .git
 2. rm -rf .gitignore
@@ -8,7 +10,6 @@ git clone 후 해당 폴더에서,
 6. 단, git init은 실행되지 않도록 할것.
 7. vscode에서 sync 수행
 
-# 필요한 명령 모음
 ## ubuntu
 - 휴지통 비우기
   rm -rf ~/.local/share/Trash/files/*

@@ -17,4 +17,16 @@
 - conda env remove -n prayme
 - conda env -n 새로만들 환경 clone 
 
-where python
+## conda 가상환경 복사
+- (내보내기) conda env export -n <env-name> > environment.yml
+- (복사) conda env create -f path/to/environment.yml
+- (바로 clone) conda create -n (새로운 가상환경) --clone )기존 가상환경)
+  
+## conda 가상환경 내보내기
+  - 내보내기 
+  conda list --explicit > spec-file.txt
+  - 새로운 가상환경 만들면서 설치하기
+  conda create --name MyEnvironment --file spec-file.txt
+  - 기존 가상환경에 설치하기
+  conda install --name MyEnvironment --file spec-file.txt
+

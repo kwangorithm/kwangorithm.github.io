@@ -1,5 +1,4 @@
 # kwangorithm.github.io
-# 필요한 명령 모음
 ## git
 git clone 후 해당 폴더에서, 
 1. rm -rf .git

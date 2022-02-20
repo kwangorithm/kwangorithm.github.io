@@ -1,4 +1,12 @@
 # kwangorithm.github.io
+git clone 후 해당 폴더에서, 
+1. rm -rf .git
+2. rm -rf .gitignore
+3. code .
+4. vscode에서 publish 하면서 git init
+5. 이후 git 페이지에서 Readme.md 만들고, branch를 main으로 변경 하는 코드 카피해서 실행 
+6. 단, git init은 실행되지 않도록 할것.
+7. vscode에서 sync 수행
 
 # 필요한 명령 모음
 ## ubuntu

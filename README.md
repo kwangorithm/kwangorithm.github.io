@@ -1,6 +1,11 @@
 # kwangorithm.github.io
 
 # 필요한 명령 모음
+## ubuntu
+- 휴지통 비우기
+  rm -rf ~/.local/share/Trash/files/*
+- 파일 이름 변경
+  gprename
 
 ## anaconda
 
@@ -32,4 +37,5 @@ https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a34848
   conda create --name MyEnvironment --file spec-file.txt
   - 기존 가상환경에 설치하기
   conda install --name MyEnvironment --file spec-file.txt
+
 

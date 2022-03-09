@@ -46,4 +46,10 @@ https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a34848
   - 기존 가상환경에 설치하기
   conda install --name MyEnvironment --file spec-file.txt
 
-
+## conda 가상환경 폴더별 관리
+- 작업하려는 프로젝트 폴더로 이동
+- conda create --prefix ./venv python=3.8
+- conda create -p ./venv python=3.8
+- 작업하려는 폴더에 venv 가상환경 폴더를 만들고 python=3.8 설치
+- conda activate ./venv 하면 끝 (프로젝트별 가상환경 이름을 외울 필요 없음)
+- .gitignore에 venv/ 추가

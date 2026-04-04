@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kwang Yong Jung - Principal System Engineer. Portfolio showcasing experience, skills, and projects.">
+    <title>Kwang Yong Jung - Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/lucide@latest">
+    <script src="https://unpkg.com/lucide"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#hero">KYJ</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">소개</a></li>
+                    <li><a href="#skills" class="nav-link">역량</a></li>
+                    <li><a href="#experience" class="nav-link">경력</a></li>
+                    <li><a href="#education" class="nav-link">학력</a></li>
+                    <li><a href="#awards" class="nav-link">수상</a></li>
+                    <li><a href="#contact" class="nav-link">연락</a></li>
+                </ul>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">정광용 (Kwang Yong Jung)</h1>
+                <p class="hero-subtitle">Principal System Engineer & AI Innovation Leader</p>
+                <p class="hero-description">
+                    20년 이상 레이다 및 AI 기반 방위 시스템 개발을 선도해온 전문가입니다.
+                    M-SAM/L-SAM 개발, 센서 융합, 차세대 C2 시스템 전문가로 글로벌 방산 협력을 주도하고 있습니다.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.731-2.004 1.438-.103.25-.129.599-.129.948v5.419h-3.554s.05-8.736 0-9.646h3.554v1.364c.429-.658 1.191-1.595 2.896-1.595 2.117 0 3.704 1.385 3.704 4.365v5.512zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.959.765-1.715 1.959-1.715 1.188 0 1.914.756 1.932 1.715 0 .953-.744 1.715-1.976 1.715zm1.946 11.597H3.392V9.806h3.891v10.646zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>자기소개</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        대한민국 방위산업의 중추인 M-SAM(천궁) 및 L-SAM 다기능레이다(MFR) 체계 설계와 알고리즘 개발을 20년간 주도해 온 전문 엔지니어입니다.
+                    </p>
+                    <p>
+                        기술적 탁월함뿐만 아니라 국방기술진흥연구소장상, 방위사업청 표창 등으로 입증된 프로젝트 기획, 수행 능력을 바탕으로 복잡한 기술 요구사항을 승리하는 제안과 차세대 방산 솔루션으로 전환하는 Project Formulation 및 R&D 전략 수립에 특화되어 있습니다.
+                    </p>
+                    <p>
+                        미래 전장의 게임 체인저가 될 AI 기술 혁신에 전념하고 있으며, AI 기반 C2 체계 지능형 의사결정, 이종센서융합 분야에 집중하고 있습니다.
+                    </p>
+                </div>
+                <div class="core-strengths">
+                    <h3>핵심 역량</h3>
+                    <ul>
+                        <li><strong>Proven Track Record:</strong> M-SAM(천궁) 탐색/체계 개발부터 성능 개량, L-SAM 체계 설계까지 레이다 개발의 전 과정을 성공적으로 수행했습니다.</li>
+                        <li><strong>Global Collaboration:</strong> 프랑스(Thales), 러시아(ALMAZ), 이스라엘(IAI/ELTA), 남아공(CSIR), UAE(EDGE) 등 글로벌 파트너와의 해외 협력 개발 및 기술 협력을 통해 세계적 수준의 레이다 설계 역량 및 능력을 확보했습니다.</li>
+                        <li><strong>Academic Excellence:</strong> 'Evidence Theory'와 'Deep Learning'을 접목한 표적 분류 연구로 공학박사 학위를 취득, 이론과 실무를 겸비했습니다.</li>
+                        <li><strong>Future Innovation:</strong> 현재 AI 팀의 핵심 멤버로서 AI 기반 최첨단 레이다 및 EO/IR 센서 융합 설계를 담당하며, 차세대 방산 솔루션의 기획과 수주를 이끌고 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>핵심 보유 역량</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>레이다 시스템</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">M-SAM/L-SAM MFR</span>
+                        <span class="skill-tag">System Design</span>
+                        <span class="skill-tag">System Budget</span>
+                        <span class="skill-tag">Waveform Design</span>
+                        <span class="skill-tag">M&S</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>알고리즘</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Target Tracking</span>
+                        <span class="skill-tag">Target Classification</span>
+                        <span class="skill-tag">Data Association</span>
+                        <span class="skill-tag">Evidence Theory</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & 센서 융합</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Radar Signal Processing</span>
+                        <span class="skill-tag">Radar-EO/IR Fusion</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>소프트웨어</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Matlab</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>전략 & 협력</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">R&D Strategy</span>
+                        <span class="skill-tag">Project Planning</span>
+                        <span class="skill-tag">기술 협력</span>
+                        <span class="skill-tag">Technology Roadmap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>주요 경력 사항</h2>
+            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <h3>Chief Engineer | AI Team</h3>
+                        <span class="exp-date">2026.01 - 현재</span>
+                    </div>
+                    <p class="exp-company">Advanced Technology R&D Center</p>
+                    <ul class="exp-details">
+                        <li>AI 기반 최첨단 레이다 및 센서 융합 시스템 설계 주도</li>
+                        <li>글로벌 AI 레이다 기술 협력 및 제안</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <h3>Senior Manager | SW R&D Strategy Team</h3>
+                        <span class="exp-date">2025.01 - 2026.01</span>
+                    </div>
+                    <p class="exp-company">SW R&D Strategy Team</p>
+                    <ul class="exp-details">
+                        <li>전사 SW 및 시스템 알고리즘 R&D 전략 수립</li>
+                        <li>방산 소재/부품 R&D 소요 경진대회 동상 수상 (2025)</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <h3>Senior Engineer | Advanced Research Center / MFR Team</h3>
+                        <span class="exp-date">2013.01 - 2024.12</span>
+                    </div>
+                    <p class="exp-company">Advanced Research Center</p>
+                    <ul class="exp-details">
+                        <li>L-SAM MFR: 시스템 알고리즘 설계 및 해외 협력 개발 (프랑스 Thales)</li>
+                        <li>M-SAM MFR: 성능 개량 및 체계 개발, 시스템 테스트 및 분석</li>
+                        <li>WIRM 프로젝트: Evidence Theory 기반 탄도탄 표적 분류 및 과부하 방지 기술 개발 (선행기술상 수상)</li>
+                        <li>장사정포 요격체계 실시간 검증장치 제작 및 체계 설계</li>
+                        <li>방위사업청 유공표창 수상 (2024)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2>학력 사항</h2>
+            <div class="education-list">
+                <div class="education-card">
+                    <div class="edu-header">
+                        <h3>공학박사 (Ph.D.)</h3>
+                        <span class="edu-date">연세대학교</span>
+                    </div>
+                    <p class="edu-focus">전기전자공학 / Computational Intelligence Lab.</p>
+                    <p class="edu-thesis"><strong>Thesis:</strong> AI & Evidence Theory based Radar Target Classification</p>
+                </div>
+                <div class="education-card">
+                    <div class="edu-header">
+                        <h3>공학석사 (M.S.)</h3>
+                        <span class="edu-date">한양대학교</span>
+                    </div>
+                    <p class="edu-focus">전기전자제어계측공학 / Guidance and Control Lab</p>
+                    <p class="edu-thesis"><strong>Research:</strong> Multi-sensor Data Fusion & Target Tracking</p>
+                </div>
+                <div class="education-card">
+                    <div class="edu-header">
+                        <h3>학사 (B.S.)</h3>
+                        <span class="edu-date">한양대학교</span>
+                    </div>
+                    <p class="edu-focus">전기전자제어계측공학</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Honors Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2>주요 수상 내역</h2>
+            <div class="awards-list">
+                <div class="award-card">
+                    <div class="award-header">
+                        <h3>동상</h3>
+                        <span class="award-date">2025</span>
+                    </div>
+                    <p class="award-org">국방기술진흥연구소장상</p>
+                    <p class="award-desc">제2회 방산 소재/부품 R&D 소요 경진대회</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <h3>유공표창</h3>
+                        <span class="award-date">2024</span>
+                    </div>
+                    <p class="award-org">방위사업청 (DAPA)</p>
+                    <p class="award-desc">AI 기반 레이다-전자광학 센서융합 기술 기여</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <h3>선행기술상</h3>
+                        <span class="award-date">2017</span>
+                    </div>
+                    <p class="award-org">한화시스템</p>
+                    <p class="award-desc">탄도탄 표적 탐지/추적 및 대응능력 확보</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <h3>대표이사 표창 (2건)</h3>
+                        <span class="award-date">2014, 2015</span>
+                    </div>
+                    <p class="award-org">한화시스템</p>
+                    <p class="award-desc">모범상, 보안우수상</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>연락하기</h2>
+            <p class="contact-text">
+                AI 기반 방위산업 솔루션, 전략적 R&D 협력, 기술 협업에 관심이 있으신가요?
+                함께 연락하고 기회를 모색해봅시다.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:kyjung@yonsei.ac.kr" class="btn btn-primary">
+                    이메일 보내기
+                </a>
+                <a href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 정광용. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

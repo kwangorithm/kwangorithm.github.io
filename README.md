@@ -1,55 +1,60 @@
 # kwangorithm.github.io
-## git
-git clone 후 해당 폴더에서, 
-1. rm -rf .git
-2. rm -rf .gitignore
-3. code .
-4. vscode에서 publish 하면서 git init
-5. 이후 git 페이지에서 Readme.md 만들고, branch를 main으로 변경 하는 코드 카피해서 실행 
-6. 단, git init은 실행되지 않도록 할것.
-7. vscode에서 sync 수행
 
-## ubuntu
-- 휴지통 비우기
-  rm -rf ~/.local/share/Trash/files/*
-- 파일 이름 변경
-  gprename
+GitHub Pages 기반 개인 기술 포트폴리오입니다.  
+방향은 `모던 + 간결 + 기술 중심`이며, 이력은 LinkedIn 기반으로 반자동 갱신할 수 있게 구성했습니다.
 
-## anaconda
+## 구조
 
-https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf
+```text
+.
+├── index.html
+├── css/styles.css
+├── js/main.js
+├── data/
+│   ├── linkedin-source.json
+│   └── profile.js
+└── scripts/
+    └── linkedin_to_profile.py
+```
 
-- conda create -n vene_name python=3.8
-- conda install -c conda-forge 패키지 이름
-- conda forge를 디폴트로 설정
-  1. conda config --add channels conda-forge 로 설정
-  2. conda config --show channels 로 확인
-  
+## 배포
 
-- conda info —envs
-- conda --version
+1. 이 저장소를 `kwangorithm.github.io` 이름으로 GitHub에 push
+2. GitHub Pages를 `main` 브랜치 / root 로 설정
+3. 잠시 후 `https://kwangorithm.github.io` 에서 확인
 
-- conda search conda-forge::tqdm
-- conda env remove -n prayme
-- conda env -n 새로만들 환경 clone 
+정적 파일만 사용하므로 별도 빌드가 필요 없습니다.
 
-## conda 가상환경 복사 (for Win, Linux, Mac OS)
-- (내보내기) conda env export -n ENVNAME > environment.yml
-- (복사) conda env create -f path/to/environment.yml  
-- (clone) conda create --clone ENVNAME --name NEWENV
-  
-## conda 가상환경 복사 (for one OS)
-  - exact pkg version 내보내기
-  conda list --explicit > spec-file.txt
-  - 새로운 가상환경 만들면서 exact pkg version 설치하기
-  conda create --name MyEnvironment --file spec-file.txt
-  - 기존 가상환경에 설치하기
-  conda install --name MyEnvironment --file spec-file.txt
+## 이력 업데이트 방식
 
-## conda 가상환경 폴더별 관리
-- 작업하려는 프로젝트 폴더로 이동
-- conda create --prefix ./venv python=3.8
-- conda create -p ./venv python=3.8
-- 작업하려는 폴더에 venv 가상환경 폴더를 만들고 python=3.8 설치
-- conda activate ./venv 하면 끝 (프로젝트별 가상환경 이름을 외울 필요 없음)
-- .gitignore에 venv/ 추가
+원본 데이터는 `data/linkedin-source.json` 입니다.  
+LinkedIn 내용을 기준으로 이 파일만 수정한 뒤, 아래 명령으로 사이트용 데이터 파일을 다시 생성하면 됩니다.
+
+```bash
+python3 scripts/linkedin_to_profile.py
+```
+
+그러면 `data/profile.js` 가 갱신되고, 사이트는 그 데이터를 읽어 렌더링합니다.
+
+## 수정 포인트
+
+- 메인 문구: `data/linkedin-source.json > site`
+- 프로젝트: `data/linkedin-source.json > projects`
+- 연구 주제: `data/linkedin-source.json > research`
+- 논문/기술노트: `data/linkedin-source.json > publications`
+
+## 로컬 확인
+
+파일을 바로 열어도 되지만, 가장 안정적인 확인은 간단한 로컬 서버입니다.
+
+```bash
+python3 -m http.server 8000
+```
+
+그 뒤 `http://localhost:8000` 에서 확인하면 됩니다.
+
+## 추천 운영 방식
+
+- LinkedIn은 경력과 공식 이력의 기준점으로 유지
+- 이 저장소는 프로젝트 기여도, 연구 방향, 검증 가능한 링크를 더해 개인 자산으로 관리
+- 논문, 발표 자료, GitHub 저장소가 생기면 `projects` 와 `publications` 에 계속 추가

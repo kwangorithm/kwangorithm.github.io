@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+
+# macOS metadata
+.DS_Store
+._*
+.AppleDouble
+.LSOverride

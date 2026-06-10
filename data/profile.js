@@ -1,300 +1,789 @@
 window.PORTFOLIO_PROFILE = {
-  "site": {
-    "title": "Kwangorithm",
-    "owner": "Kwang Yong Jung",
-    "headline": "Defense AI / Sensor Fusion Architect",
-    "eyebrow": "GitHub Pages Portfolio",
-    "summary": "20년 이상 레이다 시스템, AI 기반 탐지/분류, Radar-EO/IR 센서 융합, 차세대 C2 아키텍처를 연결해 온 기술 중심 포트폴리오입니다.",
-    "metaDescription": "Kwangorithm portfolio for defense AI, radar systems, and sensor fusion architecture.",
-    "location": "Seoul, Korea",
-    "email": "kyjung@yonsei.ac.kr",
-    "github": "https://github.com/kwangorithm",
-    "githubLabel": "github.com/kwangorithm",
-    "linkedin": "https://www.linkedin.com/in/kwangyong-jung-a95b361a6/",
-    "linkedinLabel": "kwangyong-jung-a95b361a6",
-    "resumeNote": "LinkedIn 기반 이력에 프로젝트 기여도와 연구 의도를 덧붙여 기술 허브 형태로 관리합니다.",
-    "syncSource": "LinkedIn + manual curation",
-    "syncDate": "2026-04-04",
-    "contactNote": "방산 AI, 센서 융합, 전략형 R&D, 기술 제안 및 협력 논의를 환영합니다."
-  },
-  "metrics": [
-    {
-      "value": "20+",
-      "label": "Years in radar systems"
-    },
-    {
-      "value": "Ph.D.",
-      "label": "AI + evidence theory"
-    },
-    {
-      "value": "UAE",
-      "label": "Global demo track"
-    },
-    {
-      "value": "Radar + EO",
-      "label": "Sensor fusion scope"
-    }
-  ],
-  "highlights": [
-    "M-SAM / L-SAM",
-    "AI-enabled Radar",
-    "Sensor Fusion",
-    "Technical Strategy",
-    "Defense R&D"
-  ],
-  "focusAreas": [
-    {
-      "title": "Radar System Architecture",
-      "description": "다기능 레이다 체계 설계, 시스템 버짓, 파형과 알고리즘 레벨까지 연결된 시스템 아키텍처 역량.",
-      "tags": [
-        "MFR",
-        "System Design",
-        "Waveform",
-        "M&S"
-      ]
-    },
-    {
-      "title": "AI and Multi-Sensor Fusion",
-      "description": "레이더 신호 처리, 표적 분류, EO/IR 융합, AI 기반 의사결정 지원까지 다루는 응용 중심 설계.",
-      "tags": [
-        "Deep Learning",
-        "Evidence Theory",
-        "Radar-EO/IR",
-        "C2"
-      ]
-    },
-    {
-      "title": "R&D Strategy and Capture",
-      "description": "기술을 제안, 사업화, 국제 협력 구조로 번역하는 전략형 R&D 기획과 프로젝트 포뮬레이션 경험.",
-      "tags": [
-        "Proposal",
-        "Roadmap",
-        "Global Partnering",
-        "Capture"
-      ]
-    }
-  ],
-  "projects": [
-    {
-      "title": "AI-enabled Radar and Sensor Fusion Architecture",
-      "role": "Chief Engineer / AI Team",
-      "period": "2026.01 - Present",
-      "summary": "차세대 레이다와 EO/IR 기반 센서 융합 구조를 AI 의사결정 관점에서 연결하는 시스템 아키텍처 설계.",
-      "tags": [
-        "AI Radar",
-        "Fusion",
-        "Mission Systems"
+  "defaultLanguage": "ko",
+  "languages": {
+    "ko": {
+      "site": {
+        "title": "Kwangorithm",
+        "owner": "Kwang Yong Jung",
+        "headline": "Defense AI · Radar Systems · Sensor Fusion Architect",
+        "eyebrow": "GitHub Light Portfolio",
+        "summary": "20년 이상 레이다 체계, AI 기반 탐지/분류, Radar-EO/IR 센서 융합, 차세대 C2 아키텍처를 연결해 온 실전형 시스템 아키텍트입니다.",
+        "metaDescription": "Kwang Yong Jung portfolio for defense AI, radar systems, sensor fusion architecture, and R&D strategy.",
+        "location": "Seoul, Korea",
+        "email": "kyjung@yonsei.ac.kr",
+        "github": "https://github.com/kwangorithm",
+        "githubLabel": "github.com/kwangorithm",
+        "linkedin": "https://www.linkedin.com/in/kwangyong-jung-a95b361a6/",
+        "linkedinLabel": "kwangyong-jung-a95b361a6",
+        "resumeNote": "LinkedIn 기반 경력에 프로젝트 기여도, 연구 축, 협업 의도를 더해 밝고 읽기 쉬운 기술 포트폴리오로 정리했습니다.",
+        "syncSource": "LinkedIn 기반 + 직접 큐레이션",
+        "syncDate": "2026-06-10",
+        "contactNote": "방산 AI, 레이다 시스템, 센서 융합, 전략형 R&D, 국제 협력 제안과 기술 검증 논의를 환영합니다.",
+        "footerCopy": "Defense AI, radar systems, sensor fusion, and technical strategy."
+      },
+      "ui": {
+        "languageLabel": "Language",
+        "selectLanguage": "언어 선택",
+        "updatedPrefix": "Updated",
+        "actions": {
+          "github": "GitHub 보기",
+          "linkedin": "LinkedIn 보기",
+          "selectedWork": "핵심 프로젝트"
+        },
+        "details": "자세히",
+        "contribution": "기여",
+        "outcome": "성과",
+        "contactLabels": {
+          "email": "Email",
+          "linkedin": "LinkedIn",
+          "github": "GitHub",
+          "focus": "Focus"
+        },
+        "nav": [
+          {
+            "href": "#overview",
+            "label": "Overview"
+          },
+          {
+            "href": "#projects",
+            "label": "Projects"
+          },
+          {
+            "href": "#research",
+            "label": "Research"
+          },
+          {
+            "href": "#timeline",
+            "label": "Timeline"
+          },
+          {
+            "href": "#publications",
+            "label": "Writing"
+          },
+          {
+            "href": "#contact",
+            "label": "Contact"
+          }
+        ],
+        "sections": {
+          "overview": {
+            "kicker": "Overview",
+            "title": "레이다 체계, AI, 전략형 R&D를 연결하는 커리어 허브",
+            "lead": "이력의 흐름을 밝은 톤으로 재구성해 전문 영역, 프로젝트 역할, 연구 확장성을 빠르게 파악할 수 있게 했습니다."
+          },
+          "projects": {
+            "kicker": "Selected Projects",
+            "title": "역할과 성과가 분명하게 드러나는 대표 프로젝트",
+            "lead": "방공 레이다 체계 개발부터 AI 기반 센서 융합 아키텍처까지, 실무 책임과 산출물을 분리해 정리했습니다."
+          },
+          "research": {
+            "kicker": "Research Agenda",
+            "title": "박사 연구와 현장 문제를 잇는 연구 아젠다",
+            "lead": "Evidence Theory, 딥러닝, Radar-EO/IR 융합, AI-enabled C2를 논문과 기술 노트로 확장할 수 있는 형태로 구성했습니다."
+          },
+          "timeline": {
+            "kicker": "Timeline",
+            "title": "경력, 학력, 수상 흐름을 한눈에",
+            "lead": "현재 역할과 장기 경험, 학문적 기반, 외부 검증 포인트를 함께 보여줍니다."
+          },
+          "experience": {
+            "title": "Experience",
+            "lead": "실무 책임 범위와 전환 포인트"
+          },
+          "education": {
+            "title": "Education",
+            "lead": "학문적 기반과 연구 방향"
+          },
+          "awards": {
+            "title": "Awards",
+            "lead": "외부 검증과 조직 내 성과"
+          },
+          "publications": {
+            "kicker": "Publications & Writing",
+            "title": "논문과 기술 기록으로 확장되는 전문성",
+            "lead": "완료된 박사 연구 기반 자산과 향후 작성할 센서 융합·C2 기술 노트를 같은 패턴으로 관리합니다."
+          },
+          "contact": {
+            "kicker": "Contact",
+            "title": "기술 협업, 연구 제안, 전략 논의 연결 창구",
+            "lead": "경력 소개를 넘어 공동 연구, 기술 제안, 프로젝트 검증 링크를 연결하는 시작점입니다."
+          }
+        }
+      },
+      "metrics": [
+        {
+          "value": "20+",
+          "label": "Years in radar systems"
+        },
+        {
+          "value": "Ph.D.",
+          "label": "AI + evidence theory"
+        },
+        {
+          "value": "M-SAM / L-SAM",
+          "label": "Air-defense radar programs"
+        },
+        {
+          "value": "Radar + EO/IR",
+          "label": "Sensor fusion scope"
+        }
       ],
-      "contribution": [
-        "AI 기반 레이다 및 센서 융합 시스템 설계 주도",
-        "글로벌 협력형 제안과 기술 구조 정리",
-        "향후 논문 및 기술 기록으로 확장 가능한 연구 허브 정의"
-      ],
-      "outcome": [
-        "차세대 방산 솔루션 제안 기반 확보",
-        "개인 기여도와 구조적 역할을 분리해 기록하는 포트폴리오 프레임 수립"
-      ]
-    },
-    {
-      "title": "L-SAM MFR System Algorithm Design",
-      "role": "Senior Engineer / Advanced Research Center",
-      "period": "2013 - 2024",
-      "summary": "장거리 요격체계용 다기능 레이다의 시스템 알고리즘 및 해외 협력 기반 아키텍처 개발.",
-      "tags": [
-        "L-SAM",
-        "MFR",
-        "Thales"
-      ],
-      "contribution": [
-        "시스템 알고리즘 설계와 성능 분석 주도",
-        "프랑스 Thales와의 해외 협력 개발 연결",
-        "레이다 체계 레벨 요구를 세부 설계로 분해"
-      ],
-      "outcome": [
-        "고난도 방공 레이다 체계 설계 경험 축적",
-        "국제 협력 기반 기술 설계 및 조율 역량 확보"
-      ]
-    },
-    {
-      "title": "M-SAM MFR Upgrade and System Validation",
-      "role": "Senior Engineer / MFR Team",
-      "period": "2013 - 2024",
-      "summary": "M-SAM 다기능 레이다 성능 개량과 체계 개발, 실시간 검증과 분석을 수행한 대표 실전 프로젝트.",
-      "tags": [
-        "M-SAM",
-        "Validation",
-        "Real-time"
-      ],
-      "contribution": [
-        "성능 개량 및 체계 개발 주도",
-        "실시간 검증장치와 시스템 테스트 구조 설계",
-        "장사정포 요격체계 검증 및 체계 분석 수행"
-      ],
-      "outcome": [
-        "실전형 검증 체계 구축 경험 확보",
-        "시스템 성능 분석과 구현 사이클 내재화"
-      ]
-    },
-    {
-      "title": "Evidence Theory Based Ballistic Target Classification",
-      "role": "Research Lead / Advanced Research Center",
-      "period": "2017 - 2024",
-      "summary": "Evidence Theory와 딥러닝 기반 표적 분류를 결합해 레이다 표적 판별과 과부하 방지 기술을 연구한 트랙.",
-      "tags": [
-        "Evidence Theory",
-        "Classification",
-        "WIRM"
-      ],
-      "contribution": [
-        "표적 분류 알고리즘 설계 및 연구 주도",
-        "박사 연구와 실무 문제를 연결하는 기술 경로 확보",
-        "선행기술상 수상으로 이어진 핵심 연구 축 형성"
-      ],
-      "outcome": [
-        "박사 연구 주제와 방산 실무를 연결한 대표 사례 확보",
-        "향후 SCI 논문 확장 가능한 연구 자산 형성"
-      ]
-    }
-  ],
-  "research": [
-    {
-      "title": "Evidential Deep Learning for Radar Classification",
-      "description": "불확실성을 표현하는 evidence theory와 딥러닝 기반 표적 분류를 연결해 신뢰 가능한 방산 AI로 확장하는 연구 축.",
-      "tags": [
-        "EDL",
-        "Classification",
-        "Uncertainty"
-      ]
-    },
-    {
-      "title": "Radar and EO/IR Sensor Fusion",
-      "description": "동종 센서 성능 향상을 넘어서 이종 센서 융합을 통한 탐지, 식별, 의사결정 구조 최적화에 초점을 둔 연구 방향.",
-      "tags": [
-        "Fusion",
-        "Tracking",
-        "Decision Support"
-      ]
-    },
-    {
-      "title": "AI-enabled C2 and MUM-T Concepts",
-      "description": "AI 기반 상황 인식과 지능형 의사결정, 유무인 복합체계 연계를 고려한 차세대 작전 시스템 개념 연구.",
-      "tags": [
-        "C2",
-        "MUM-T",
-        "Autonomy"
-      ]
-    }
-  ],
-  "experience": [
-    {
-      "role": "Chief Engineer | AI Team",
-      "company": "Advanced Technology R&D Center",
-      "period": "2026.01 - Present",
-      "summary": "AI 기반 최첨단 레이다와 센서 융합 시스템 기획 및 구조 설계.",
       "highlights": [
-        "AI 기반 레이다 및 센서 융합 시스템 설계 주도",
-        "글로벌 AI 레이다 기술 협력 및 제안 추진"
+        "Defense AI",
+        "M-SAM / L-SAM MFR",
+        "Radar-EO/IR Fusion",
+        "Target Classification",
+        "R&D Strategy"
+      ],
+      "focusAreas": [
+        {
+          "title": "레이다 시스템 아키텍처",
+          "description": "다기능 레이다 체계 설계, 시스템 버짓, 파형·알고리즘 요구, 실시간 검증까지 이어지는 end-to-end 시스템 설계 역량.",
+          "tags": [
+            "MFR",
+            "System Design",
+            "Waveform",
+            "Validation"
+          ]
+        },
+        {
+          "title": "AI 기반 탐지·분류와 센서 융합",
+          "description": "레이더 신호 처리, 표적 분류, 불확실성 추론, EO/IR 융합을 AI 의사결정 지원 구조로 연결하는 응용 중심 연구·개발 역량.",
+          "tags": [
+            "Deep Learning",
+            "Evidence Theory",
+            "Radar-EO/IR",
+            "Decision Support"
+          ]
+        },
+        {
+          "title": "전략형 R&D와 글로벌 협력",
+          "description": "기술 아이디어를 제안서, 로드맵, 국제 협력 구조, 사업화 가능한 R&D 포트폴리오로 번역하는 전략 실행 역량.",
+          "tags": [
+            "Proposal",
+            "Roadmap",
+            "Global Partnering",
+            "Capture"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "AI-enabled Radar and Sensor Fusion Architecture",
+          "role": "Chief Engineer / AI Team",
+          "period": "2026.01 - Present",
+          "summary": "차세대 레이다와 EO/IR 기반 센서 융합 구조를 AI 의사결정 관점에서 연결하는 시스템 아키텍처 설계.",
+          "tags": [
+            "AI Radar",
+            "Fusion",
+            "Mission Systems"
+          ],
+          "contribution": [
+            "AI 기반 레이다 및 센서 융합 시스템의 개념 설계와 기술 구조 정리 주도",
+            "글로벌 협력형 제안에 필요한 아키텍처, 역할 분담, 기술 메시지 정제",
+            "향후 논문, 기술 노트, 프로젝트 검증 링크로 확장 가능한 포트폴리오 프레임 정의"
+          ],
+          "outcome": [
+            "차세대 방산 AI 솔루션 제안을 위한 공통 언어와 설명 구조 확보",
+            "개인 기여도, 연구 의도, 사업화 가능성을 분리해 보여주는 포트폴리오 기반 마련"
+          ]
+        },
+        {
+          "title": "L-SAM MFR System Algorithm Design",
+          "role": "Senior Engineer / Advanced Research Center",
+          "period": "2013 - 2024",
+          "summary": "장거리 요격체계용 다기능 레이다의 시스템 알고리즘, 성능 분석, 해외 협력 기반 아키텍처 개발.",
+          "tags": [
+            "L-SAM",
+            "MFR",
+            "Thales"
+          ],
+          "contribution": [
+            "체계 레벨 요구를 레이다 시스템 알고리즘과 성능 분석 항목으로 분해",
+            "프랑스 Thales와의 해외 협력 개발 과정에서 기술 구조와 인터페이스 조율",
+            "복잡한 방공 임무 요구를 설계·검증 가능한 알고리즘 단위로 정리"
+          ],
+          "outcome": [
+            "고난도 방공 레이다 체계 설계 경험 축적",
+            "국제 협력 환경에서 시스템 요구, 알고리즘, 검증 논리를 연결하는 역량 확보"
+          ]
+        },
+        {
+          "title": "M-SAM MFR Upgrade and System Validation",
+          "role": "Senior Engineer / MFR Team",
+          "period": "2013 - 2024",
+          "summary": "M-SAM 다기능 레이다 성능 개량, 체계 개발, 실시간 검증장치와 시스템 테스트 구조 설계.",
+          "tags": [
+            "M-SAM",
+            "Validation",
+            "Real-time"
+          ],
+          "contribution": [
+            "성능 개량 및 체계 개발 과정에서 알고리즘 요구와 검증 항목 연결",
+            "실시간 검증장치와 시스템 테스트 구조 설계",
+            "장사정포 요격체계 검증 및 체계 분석 수행"
+          ],
+          "outcome": [
+            "실전형 검증 체계 구축 경험 확보",
+            "설계, 구현, 검증, 성능 분석을 순환시키는 시스템 엔지니어링 역량 내재화"
+          ]
+        },
+        {
+          "title": "Evidence Theory Based Ballistic Target Classification",
+          "role": "Research Lead / Advanced Research Center",
+          "period": "2017 - 2024",
+          "summary": "Evidence Theory와 딥러닝 기반 표적 분류를 결합해 레이다 표적 판별과 과부하 방지 기술을 연구한 트랙.",
+          "tags": [
+            "Evidence Theory",
+            "Classification",
+            "WIRM"
+          ],
+          "contribution": [
+            "불확실성을 고려한 표적 분류 알고리즘 설계 및 연구 주도",
+            "박사 연구 주제와 실제 레이다 운용 문제를 연결하는 기술 경로 확보",
+            "선행기술상으로 이어진 핵심 연구 축 형성"
+          ],
+          "outcome": [
+            "AI 기반 레이다 분류 연구의 대표 사례 확보",
+            "향후 SCI 논문과 기술 노트로 확장 가능한 연구 자산 형성"
+          ]
+        }
+      ],
+      "research": [
+        {
+          "title": "Evidential Deep Learning for Radar Classification",
+          "description": "레이다 표적 분류에서 딥러닝 예측의 불확실성을 Evidence Theory로 표현하고, 운용 환경의 신뢰도 판단에 연결하는 연구 축.",
+          "tags": [
+            "EDL",
+            "Uncertainty",
+            "Radar AI"
+          ]
+        },
+        {
+          "title": "Radar and EO/IR Sensor Fusion",
+          "description": "Radar의 거리·속도 정보와 EO/IR의 식별 단서를 융합해 상황 인식과 의사결정 품질을 높이는 시스템 아키텍처 연구.",
+          "tags": [
+            "Radar",
+            "EO/IR",
+            "Fusion"
+          ]
+        },
+        {
+          "title": "AI-enabled C2 and MUM-T Concepts",
+          "description": "센서, 플랫폼, 지휘통제 체계를 AI 기반 의사결정 루프로 연결해 임무 자동화와 협업 운용 개념을 확장하는 장기 아젠다.",
+          "tags": [
+            "C2",
+            "MUM-T",
+            "Mission AI"
+          ]
+        }
+      ],
+      "experience": [
+        {
+          "company": "Advanced Technology R&D Center",
+          "role": "Chief Engineer | AI Team",
+          "period": "2026.01 - Present",
+          "summary": "AI 기반 최첨단 레이다와 센서 융합 시스템 기획 및 구조 설계.",
+          "highlights": [
+            "AI 기반 레이다 및 센서 융합 시스템 설계 주도",
+            "글로벌 AI 레이다 기술 협력 및 제안 추진",
+            "연구 주제, 프로젝트 기여도, 기술 제안 메시지를 하나의 포트폴리오 구조로 정리"
+          ]
+        },
+        {
+          "company": "SW R&D Strategy Team",
+          "role": "Senior Manager | SW R&D Strategy Team",
+          "period": "2025.01 - 2026.01",
+          "summary": "전사 차원의 SW와 시스템 알고리즘 연구개발 전략 수립.",
+          "highlights": [
+            "전사 SW 및 시스템 알고리즘 R&D 전략 수립",
+            "방산 소재/부품 R&D 소요 경진대회 동상 수상",
+            "기술 아이디어를 로드맵과 제안 가능한 R&D 과제로 전환"
+          ]
+        },
+        {
+          "company": "Advanced Research Center",
+          "role": "Senior Engineer | Advanced Research Center / MFR Team",
+          "period": "2013.01 - 2024.12",
+          "summary": "L-SAM, M-SAM, 표적 분류, 검증장치 제작 등 레이다 체계 전 영역을 수행한 핵심 구간.",
+          "highlights": [
+            "L-SAM MFR 시스템 알고리즘 설계 및 해외 협력 개발",
+            "M-SAM MFR 성능 개량과 체계 개발 수행",
+            "Evidence Theory 기반 표적 분류 및 과부하 방지 기술 개발",
+            "방위사업청 유공표창 수상"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Ph.D.",
+          "school": "Yonsei University",
+          "focus": "Electrical and Electronic Engineering / Computational Intelligence Lab / AI & Evidence Theory based Radar Target Classification"
+        },
+        {
+          "degree": "M.S.",
+          "school": "Hanyang University",
+          "focus": "Electrical, Electronic, Control and Instrumentation Engineering / Guidance and Control Lab / Multi-sensor Data Fusion & Target Tracking"
+        },
+        {
+          "degree": "B.S.",
+          "school": "Hanyang University",
+          "focus": "Electrical, Electronic, Control and Instrumentation Engineering"
+        }
+      ],
+      "awards": [
+        {
+          "year": "2025",
+          "title": "Bronze Prize",
+          "organization": "Defense Acquisition Program related R&D competition",
+          "note": "제2회 방산 소재/부품 R&D 소요 경진대회"
+        },
+        {
+          "year": "2024",
+          "title": "Meritorious Commendation",
+          "organization": "DAPA",
+          "note": "AI 기반 레이다-전자광학 센서융합 기술 기여"
+        },
+        {
+          "year": "2017",
+          "title": "Advanced Technology Award",
+          "organization": "Hanwha Systems",
+          "note": "탄도탄 표적 탐지 및 대응능력 관련 선행기술"
+        },
+        {
+          "year": "2014-2015",
+          "title": "CEO Commendation",
+          "organization": "Hanwha Systems",
+          "note": "모범상, 보안우수상"
+        }
+      ],
+      "publications": [
+        {
+          "title": "Evidential Deep Learning for Radar Target Classification",
+          "venue": "Doctoral research foundation",
+          "status": "Completed",
+          "note": "Evidence Theory와 딥러닝 기반 표적 분류를 연결한 박사 연구 기반 자산.",
+          "tags": [
+            "Ph.D.",
+            "Radar AI",
+            "Evidence Theory"
+          ]
+        },
+        {
+          "title": "Sensor Fusion for Radar and EO/IR Decision Support",
+          "venue": "Target journal / conference",
+          "status": "In preparation",
+          "note": "Radar-EO/IR 융합과 AI 의사결정 구조를 논문 형태로 정리하기 위한 예정 트랙.",
+          "tags": [
+            "Fusion",
+            "EO/IR",
+            "Decision Support"
+          ]
+        },
+        {
+          "title": "AI-enabled C2 for Defense Mission Systems",
+          "venue": "Future technical note",
+          "status": "Planned",
+          "note": "C2, MUM-T, 상황 인식 자동화를 연결하는 중장기 연구 및 글쓰기 슬롯.",
+          "tags": [
+            "C2",
+            "MUM-T",
+            "Architecture"
+          ]
+        }
       ]
     },
-    {
-      "role": "Senior Manager | SW R&D Strategy Team",
-      "company": "SW R&D Strategy Team",
-      "period": "2025.01 - 2026.01",
-      "summary": "전사 차원의 SW와 시스템 알고리즘 연구개발 전략 수립.",
+    "en": {
+      "site": {
+        "title": "Kwangorithm",
+        "owner": "Kwang Yong Jung",
+        "headline": "Defense AI · Radar Systems · Sensor Fusion Architect",
+        "eyebrow": "GitHub Light Portfolio",
+        "summary": "A systems architect connecting 20+ years of radar programs, AI-enabled detection and classification, Radar-EO/IR fusion, and next-generation C2 concepts.",
+        "metaDescription": "Kwang Yong Jung portfolio for defense AI, radar systems, sensor fusion architecture, and R&D strategy.",
+        "location": "Seoul, Korea",
+        "email": "kyjung@yonsei.ac.kr",
+        "github": "https://github.com/kwangorithm",
+        "githubLabel": "github.com/kwangorithm",
+        "linkedin": "https://www.linkedin.com/in/kwangyong-jung-a95b361a6/",
+        "linkedinLabel": "kwangyong-jung-a95b361a6",
+        "resumeNote": "Built from LinkedIn-derived career data and manually curated project context, this portfolio highlights technical ownership, research direction, and collaboration intent in a brighter GitHub-style format.",
+        "syncSource": "LinkedIn-derived + manual curation",
+        "syncDate": "2026-06-10",
+        "contactNote": "Open to discussions on defense AI, radar systems, sensor fusion, strategic R&D, international collaboration, and technical validation.",
+        "footerCopy": "Defense AI, radar systems, sensor fusion, and technical strategy."
+      },
+      "ui": {
+        "languageLabel": "Language",
+        "selectLanguage": "Select language",
+        "updatedPrefix": "Updated",
+        "actions": {
+          "github": "View GitHub",
+          "linkedin": "View LinkedIn",
+          "selectedWork": "Selected Work"
+        },
+        "details": "Details",
+        "contribution": "Contribution",
+        "outcome": "Outcome",
+        "contactLabels": {
+          "email": "Email",
+          "linkedin": "LinkedIn",
+          "github": "GitHub",
+          "focus": "Focus"
+        },
+        "nav": [
+          {
+            "href": "#overview",
+            "label": "Overview"
+          },
+          {
+            "href": "#projects",
+            "label": "Projects"
+          },
+          {
+            "href": "#research",
+            "label": "Research"
+          },
+          {
+            "href": "#timeline",
+            "label": "Timeline"
+          },
+          {
+            "href": "#publications",
+            "label": "Writing"
+          },
+          {
+            "href": "#contact",
+            "label": "Contact"
+          }
+        ],
+        "sections": {
+          "overview": {
+            "kicker": "Overview",
+            "title": "A career hub for radar systems, AI, and strategic R&D",
+            "lead": "The story is reframed in a brighter tone so visitors can quickly understand domain expertise, project ownership, and research direction."
+          },
+          "projects": {
+            "kicker": "Selected Projects",
+            "title": "Representative programs with clear roles and outcomes",
+            "lead": "From air-defense radar development to AI-enabled sensor fusion architecture, each project separates scope, contribution, and practical impact."
+          },
+          "research": {
+            "kicker": "Research Agenda",
+            "title": "Research themes bridging doctoral work and field problems",
+            "lead": "Evidence Theory, deep learning, Radar-EO/IR fusion, and AI-enabled C2 are organized as future papers and technical notes."
+          },
+          "timeline": {
+            "kicker": "Timeline",
+            "title": "Experience, education, and recognition at a glance",
+            "lead": "Current responsibility, long-running radar experience, academic foundation, and external validation are presented together."
+          },
+          "experience": {
+            "title": "Experience",
+            "lead": "Responsibility scope and career transition points"
+          },
+          "education": {
+            "title": "Education",
+            "lead": "Academic foundation and research direction"
+          },
+          "awards": {
+            "title": "Awards",
+            "lead": "External validation and organizational recognition"
+          },
+          "publications": {
+            "kicker": "Publications & Writing",
+            "title": "Expertise that can grow into papers and technical writing",
+            "lead": "Completed doctoral research assets and planned sensor-fusion/C2 writing tracks are managed in the same expandable format."
+          },
+          "contact": {
+            "kicker": "Contact",
+            "title": "A starting point for technical collaboration and research discussion",
+            "lead": "Beyond a career summary, this site connects research collaboration, technical proposals, and project validation links."
+          }
+        }
+      },
+      "metrics": [
+        {
+          "value": "20+",
+          "label": "Years in radar systems"
+        },
+        {
+          "value": "Ph.D.",
+          "label": "AI + evidence theory"
+        },
+        {
+          "value": "M-SAM / L-SAM",
+          "label": "Air-defense radar programs"
+        },
+        {
+          "value": "Radar + EO/IR",
+          "label": "Sensor fusion scope"
+        }
+      ],
       "highlights": [
-        "전사 SW 및 시스템 알고리즘 R&D 전략 수립",
-        "방산 소재/부품 R&D 소요 경진대회 동상 수상"
-      ]
-    },
-    {
-      "role": "Senior Engineer | Advanced Research Center / MFR Team",
-      "company": "Advanced Research Center",
-      "period": "2013.01 - 2024.12",
-      "summary": "L-SAM, M-SAM, 표적 분류, 검증장치 제작 등 레이다 체계 전 영역을 수행한 핵심 구간.",
-      "highlights": [
-        "L-SAM MFR 시스템 알고리즘 설계 및 해외 협력 개발",
-        "M-SAM MFR 성능 개량과 체계 개발 수행",
-        "Evidence Theory 기반 표적 분류 및 과부하 방지 기술 개발",
-        "방위사업청 유공표창 수상"
+        "Defense AI",
+        "M-SAM / L-SAM MFR",
+        "Radar-EO/IR Fusion",
+        "Target Classification",
+        "R&D Strategy"
+      ],
+      "focusAreas": [
+        {
+          "title": "Radar System Architecture",
+          "description": "End-to-end system design experience spanning multifunction radar architecture, system budgets, waveform and algorithm requirements, and real-time validation.",
+          "tags": [
+            "MFR",
+            "System Design",
+            "Waveform",
+            "Validation"
+          ]
+        },
+        {
+          "title": "AI-enabled Detection, Classification, and Fusion",
+          "description": "Applied R&D that connects radar signal processing, target classification, uncertainty reasoning, and EO/IR fusion to AI-assisted decision support.",
+          "tags": [
+            "Deep Learning",
+            "Evidence Theory",
+            "Radar-EO/IR",
+            "Decision Support"
+          ]
+        },
+        {
+          "title": "Strategic R&D and Global Collaboration",
+          "description": "Experience translating technical ideas into proposals, roadmaps, international collaboration structures, and R&D portfolios ready for business capture.",
+          "tags": [
+            "Proposal",
+            "Roadmap",
+            "Global Partnering",
+            "Capture"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "AI-enabled Radar and Sensor Fusion Architecture",
+          "role": "Chief Engineer / AI Team",
+          "period": "2026.01 - Present",
+          "summary": "System architecture work connecting next-generation radar and EO/IR sensor fusion through an AI decision-support lens.",
+          "tags": [
+            "AI Radar",
+            "Fusion",
+            "Mission Systems"
+          ],
+          "contribution": [
+            "Led concept design and technical structuring for AI-enabled radar and sensor fusion systems",
+            "Refined architecture, role split, and technical messaging for global collaboration proposals",
+            "Defined a portfolio frame that can grow into papers, technical notes, and project validation links"
+          ],
+          "outcome": [
+            "Established a clear narrative for next-generation defense AI solution proposals",
+            "Separated personal contribution, research intent, and commercialization potential for a stronger portfolio story"
+          ]
+        },
+        {
+          "title": "L-SAM MFR System Algorithm Design",
+          "role": "Senior Engineer / Advanced Research Center",
+          "period": "2013 - 2024",
+          "summary": "System algorithm design, performance analysis, and international collaboration architecture for long-range air-defense multifunction radar.",
+          "tags": [
+            "L-SAM",
+            "MFR",
+            "Thales"
+          ],
+          "contribution": [
+            "Translated system-level requirements into radar algorithm and performance-analysis work packages",
+            "Coordinated technical architecture and interfaces during collaboration with Thales in France",
+            "Converted complex air-defense mission requirements into designable and verifiable algorithm units"
+          ],
+          "outcome": [
+            "Built deep experience in high-complexity air-defense radar system design",
+            "Strengthened the ability to connect system requirements, algorithms, and validation logic in an international environment"
+          ]
+        },
+        {
+          "title": "M-SAM MFR Upgrade and System Validation",
+          "role": "Senior Engineer / MFR Team",
+          "period": "2013 - 2024",
+          "summary": "Multifunction radar upgrade, system development, real-time validation equipment, and system test architecture for M-SAM.",
+          "tags": [
+            "M-SAM",
+            "Validation",
+            "Real-time"
+          ],
+          "contribution": [
+            "Connected algorithm requirements with validation items across upgrade and system development cycles",
+            "Designed real-time validation equipment and system test structures",
+            "Performed system analysis and validation for long-range artillery interception programs"
+          ],
+          "outcome": [
+            "Gained hands-on experience building practical validation systems",
+            "Internalized a systems-engineering cycle across design, implementation, validation, and performance analysis"
+          ]
+        },
+        {
+          "title": "Evidence Theory Based Ballistic Target Classification",
+          "role": "Research Lead / Advanced Research Center",
+          "period": "2017 - 2024",
+          "summary": "A research track combining Evidence Theory and deep learning for radar target discrimination and overload prevention.",
+          "tags": [
+            "Evidence Theory",
+            "Classification",
+            "WIRM"
+          ],
+          "contribution": [
+            "Led research and algorithm design for target classification under uncertainty",
+            "Built a technical path connecting doctoral research with real radar operation problems",
+            "Formed a core research theme that led to advanced-technology recognition"
+          ],
+          "outcome": [
+            "Created a representative case for AI-enabled radar classification research",
+            "Developed research assets that can expand into SCI papers and technical notes"
+          ]
+        }
+      ],
+      "research": [
+        {
+          "title": "Evidential Deep Learning for Radar Classification",
+          "description": "A research direction that represents uncertainty in deep-learning radar classification with Evidence Theory and connects it to operational confidence assessment.",
+          "tags": [
+            "EDL",
+            "Uncertainty",
+            "Radar AI"
+          ]
+        },
+        {
+          "title": "Radar and EO/IR Sensor Fusion",
+          "description": "A system architecture theme that combines radar range/velocity cues with EO/IR identification cues to improve situational awareness and decision quality.",
+          "tags": [
+            "Radar",
+            "EO/IR",
+            "Fusion"
+          ]
+        },
+        {
+          "title": "AI-enabled C2 and MUM-T Concepts",
+          "description": "A long-term agenda connecting sensors, platforms, and command-and-control systems through AI decision loops for mission automation and collaborative operations.",
+          "tags": [
+            "C2",
+            "MUM-T",
+            "Mission AI"
+          ]
+        }
+      ],
+      "experience": [
+        {
+          "company": "Advanced Technology R&D Center",
+          "role": "Chief Engineer | AI Team",
+          "period": "2026.01 - Present",
+          "summary": "Planning and architecture design for advanced AI-enabled radar and sensor fusion systems.",
+          "highlights": [
+            "Leads AI-enabled radar and sensor-fusion system design",
+            "Drives global AI radar technology collaboration and proposal work",
+            "Organizes research themes, project contribution, and proposal messaging into a single portfolio structure"
+          ]
+        },
+        {
+          "company": "SW R&D Strategy Team",
+          "role": "Senior Manager | SW R&D Strategy Team",
+          "period": "2025.01 - 2026.01",
+          "summary": "Enterprise-level R&D strategy for software and system algorithms.",
+          "highlights": [
+            "Developed company-wide SW and system algorithm R&D strategy",
+            "Won a bronze prize in a defense materials/components R&D needs competition",
+            "Translated technical ideas into roadmaps and proposal-ready R&D topics"
+          ]
+        },
+        {
+          "company": "Advanced Research Center",
+          "role": "Senior Engineer | Advanced Research Center / MFR Team",
+          "period": "2013.01 - 2024.12",
+          "summary": "Core period covering L-SAM, M-SAM, target classification, validation equipment, and broader radar-system engineering.",
+          "highlights": [
+            "Designed L-SAM MFR system algorithms and supported international co-development",
+            "Worked on M-SAM MFR performance upgrades and system development",
+            "Developed Evidence Theory based target classification and overload-prevention technologies",
+            "Received a meritorious commendation from DAPA"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Ph.D.",
+          "school": "Yonsei University",
+          "focus": "Electrical and Electronic Engineering / Computational Intelligence Lab / AI & Evidence Theory based Radar Target Classification"
+        },
+        {
+          "degree": "M.S.",
+          "school": "Hanyang University",
+          "focus": "Electrical, Electronic, Control and Instrumentation Engineering / Guidance and Control Lab / Multi-sensor Data Fusion & Target Tracking"
+        },
+        {
+          "degree": "B.S.",
+          "school": "Hanyang University",
+          "focus": "Electrical, Electronic, Control and Instrumentation Engineering"
+        }
+      ],
+      "awards": [
+        {
+          "year": "2025",
+          "title": "Bronze Prize",
+          "organization": "Defense Acquisition Program related R&D competition",
+          "note": "2nd defense materials/components R&D needs competition"
+        },
+        {
+          "year": "2024",
+          "title": "Meritorious Commendation",
+          "organization": "DAPA",
+          "note": "Contribution to AI-enabled radar and electro-optical sensor fusion technology"
+        },
+        {
+          "year": "2017",
+          "title": "Advanced Technology Award",
+          "organization": "Hanwha Systems",
+          "note": "Advanced technology for ballistic target detection and response capability"
+        },
+        {
+          "year": "2014-2015",
+          "title": "CEO Commendation",
+          "organization": "Hanwha Systems",
+          "note": "Exemplary employee and security excellence awards"
+        }
+      ],
+      "publications": [
+        {
+          "title": "Evidential Deep Learning for Radar Target Classification",
+          "venue": "Doctoral research foundation",
+          "status": "Completed",
+          "note": "A doctoral research asset connecting Evidence Theory with deep-learning based target classification.",
+          "tags": [
+            "Ph.D.",
+            "Radar AI",
+            "Evidence Theory"
+          ]
+        },
+        {
+          "title": "Sensor Fusion for Radar and EO/IR Decision Support",
+          "venue": "Target journal / conference",
+          "status": "In preparation",
+          "note": "A planned writing track for organizing Radar-EO/IR fusion and AI decision-support architecture as a paper.",
+          "tags": [
+            "Fusion",
+            "EO/IR",
+            "Decision Support"
+          ]
+        },
+        {
+          "title": "AI-enabled C2 for Defense Mission Systems",
+          "venue": "Future technical note",
+          "status": "Planned",
+          "note": "A mid- to long-term writing slot connecting C2, MUM-T, and automated situational awareness.",
+          "tags": [
+            "C2",
+            "MUM-T",
+            "Architecture"
+          ]
+        }
       ]
     }
-  ],
-  "education": [
-    {
-      "degree": "Ph.D.",
-      "school": "Yonsei University",
-      "focus": "Electrical and Electronic Engineering / Computational Intelligence Lab. / AI & Evidence Theory based Radar Target Classification"
-    },
-    {
-      "degree": "M.S.",
-      "school": "Hanyang University",
-      "focus": "Electrical, Electronic, Control and Instrumentation Engineering / Guidance and Control Lab / Multi-sensor Data Fusion & Target Tracking"
-    },
-    {
-      "degree": "B.S.",
-      "school": "Hanyang University",
-      "focus": "Electrical, Electronic, Control and Instrumentation Engineering"
-    }
-  ],
-  "awards": [
-    {
-      "year": "2025",
-      "title": "Bronze Prize",
-      "organization": "Defense Acquisition Program related R&D competition",
-      "note": "제2회 방산 소재/부품 R&D 소요 경진대회"
-    },
-    {
-      "year": "2024",
-      "title": "Meritorious Commendation",
-      "organization": "DAPA",
-      "note": "AI 기반 레이다-전자광학 센서융합 기술 기여"
-    },
-    {
-      "year": "2017",
-      "title": "Advanced Technology Award",
-      "organization": "Hanwha Systems",
-      "note": "탄도탄 표적 탐지 및 대응능력 관련 선행기술"
-    },
-    {
-      "year": "2014-2015",
-      "title": "CEO Commendation",
-      "organization": "Hanwha Systems",
-      "note": "모범상, 보안우수상"
-    }
-  ],
-  "publications": [
-    {
-      "title": "Evidential Deep Learning for Radar Target Classification",
-      "venue": "Doctoral research foundation",
-      "status": "Completed",
-      "note": "Evidence theory와 딥러닝 기반 표적 분류를 연결한 박사 연구 기반 자산.",
-      "tags": [
-        "Ph.D.",
-        "Radar AI",
-        "Evidence Theory"
-      ]
-    },
-    {
-      "title": "Sensor Fusion for Radar and EO/IR Decision Support",
-      "venue": "Target journal / conference",
-      "status": "In preparation",
-      "note": "Radar-EO/IR 융합과 AI 의사결정 구조를 논문 형태로 정리하기 위한 예정 트랙.",
-      "tags": [
-        "Fusion",
-        "EO/IR",
-        "Decision Support"
-      ]
-    },
-    {
-      "title": "AI-enabled C2 for Defense Mission Systems",
-      "venue": "Future technical note",
-      "status": "Planned",
-      "note": "C2, MUM-T, 상황 인식 자동화를 연결하는 중장기 연구 및 글쓰기 슬롯.",
-      "tags": [
-        "C2",
-        "MUM-T",
-        "Architecture"
-      ]
-    }
-  ]
+  }
 };

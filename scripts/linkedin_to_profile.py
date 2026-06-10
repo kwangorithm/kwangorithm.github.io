@@ -21,21 +21,41 @@ REQUIRED_TOP_LEVEL_KEYS = [
     "publications",
 ]
 
+REQUIRED_SITE_KEYS = ["title", "owner", "headline", "email", "github", "linkedin"]
+
 
 def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
 
-def validate_payload(payload: dict) -> None:
+def validate_language_payload(payload: dict, label: str = "root") -> None:
     missing = [key for key in REQUIRED_TOP_LEVEL_KEYS if key not in payload]
     if missing:
-        raise ValueError(f"Missing required keys: {', '.join(missing)}")
+        raise ValueError(f"{label}: missing required keys: {', '.join(missing)}")
 
     site = payload["site"]
-    for key in ["title", "owner", "headline", "email", "github", "linkedin"]:
+    for key in REQUIRED_SITE_KEYS:
         if not site.get(key):
-            raise ValueError(f"site.{key} is required")
+            raise ValueError(f"{label}: site.{key} is required")
+
+
+def validate_payload(payload: dict) -> None:
+    """Validate either the legacy single-language schema or the bilingual schema."""
+    languages = payload.get("languages")
+    if languages:
+        if not isinstance(languages, dict):
+            raise ValueError("languages must be an object keyed by language code")
+
+        default_language = payload.get("defaultLanguage")
+        if default_language and default_language not in languages:
+            raise ValueError("defaultLanguage must match one of the languages keys")
+
+        for language_code, language_payload in languages.items():
+            validate_language_payload(language_payload, f"languages.{language_code}")
+        return
+
+    validate_language_payload(payload)
 
 
 def write_profile(payload: dict, path: Path) -> None:

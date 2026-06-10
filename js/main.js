@@ -1,4 +1,7 @@
-const profile = window.PORTFOLIO_PROFILE;
+const sourceProfile = window.PORTFOLIO_PROFILE;
+const languageStore = sourceProfile?.languages ?? { ko: sourceProfile };
+let currentLanguage = sourceProfile?.defaultLanguage ?? "ko";
+let profile = languageStore[currentLanguage] ?? Object.values(languageStore)[0];
 
 function setText(id, value) {
     const element = document.getElementById(id);
@@ -31,8 +34,26 @@ function renderList(items = []) {
     return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
+function renderNavigation() {
+    const navMenu = document.getElementById("navMenu");
+    navMenu.innerHTML = profile.ui.nav
+        .map((item) => `<a class="nav-link" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`)
+        .join("");
+}
+
+function renderSectionCopy() {
+    const sections = profile.ui.sections;
+
+    Object.entries(sections).forEach(([key, copy]) => {
+        setText(`${key}Kicker`, copy.kicker);
+        setText(`${key}Title`, copy.title);
+        setText(`${key}Lead`, copy.lead);
+    });
+}
+
 function renderHero() {
     const site = profile.site;
+    document.documentElement.lang = currentLanguage;
     document.title = `${site.title} | ${site.headline}`;
 
     const description = document.querySelector('meta[name="description"]');
@@ -45,9 +66,14 @@ function renderHero() {
     setText("heroTitle", site.headline);
     setText("heroSummary", site.summary);
     setText("resumeNote", site.resumeNote);
-    setText("syncDate", `Updated ${site.syncDate}`);
+    setText("syncDate", `${profile.ui.updatedPrefix} ${site.syncDate}`);
     setText("syncSource", site.syncSource);
     setText("heroLocation", site.location);
+    setText("footerCopy", site.footerCopy);
+
+    setText("heroGithub", profile.ui.actions.github);
+    setText("heroLinkedin", profile.ui.actions.linkedin);
+    setText("selectedWorkLink", profile.ui.actions.selectedWork);
 
     setLink("heroGithub", site.github);
     setLink("heroLinkedin", site.linkedin);
@@ -78,7 +104,7 @@ function renderFocusAreas() {
     focusGrid.innerHTML = profile.focusAreas
         .map(
             (item) => `
-                <article class="focus-card reveal">
+                <article class="focus-card reveal is-visible">
                     <h3 class="card-title">${escapeHtml(item.title)}</h3>
                     <p class="focus-description">${escapeHtml(item.description)}</p>
                     <div class="tag-row">${renderTagRow(item.tags)}</div>
@@ -93,7 +119,7 @@ function renderProjects() {
     projectsGrid.innerHTML = profile.projects
         .map(
             (item, index) => `
-                <details class="project-dossier reveal" ${index === 0 ? "open" : ""}>
+                <details class="project-dossier reveal is-visible" ${index === 0 ? "open" : ""}>
                     <summary class="dossier-head">
                         <div class="dossier-main">
                             <div class="project-meta">
@@ -106,16 +132,16 @@ function renderProjects() {
                             <p class="project-summary">${escapeHtml(item.summary)}</p>
                             <div class="project-tags">${renderTagRow(item.tags)}</div>
                         </div>
-                        <span class="detail-toggle">Details</span>
+                        <span class="detail-toggle">${escapeHtml(profile.ui.details)}</span>
                     </summary>
                     <div class="dossier-body">
                         <div class="detail-grid">
                             <div class="project-list-wrap">
-                                <h4>Contribution</h4>
+                                <h4>${escapeHtml(profile.ui.contribution)}</h4>
                                 <ul class="project-list">${renderList(item.contribution)}</ul>
                             </div>
                             <div class="project-list-wrap">
-                                <h4>Outcome</h4>
+                                <h4>${escapeHtml(profile.ui.outcome)}</h4>
                                 <ul class="project-list">${renderList(item.outcome)}</ul>
                             </div>
                         </div>
@@ -131,7 +157,7 @@ function renderResearch() {
     researchGrid.innerHTML = profile.research
         .map(
             (item) => `
-                <article class="research-entry reveal">
+                <article class="research-entry reveal is-visible">
                     <div class="entry-main">
                         <h3 class="research-title">${escapeHtml(item.title)}</h3>
                         <p class="research-body">${escapeHtml(item.description)}</p>
@@ -148,7 +174,7 @@ function renderExperience() {
     experienceGrid.innerHTML = profile.experience
         .map(
             (item, index) => `
-                <details class="timeline-entry reveal" ${index === 0 ? "open" : ""}>
+                <details class="timeline-entry reveal is-visible" ${index === 0 ? "open" : ""}>
                     <summary class="dossier-head">
                         <div class="dossier-main">
                             <div class="timeline-top">
@@ -160,7 +186,7 @@ function renderExperience() {
                             </div>
                             <p class="timeline-summary">${escapeHtml(item.summary)}</p>
                         </div>
-                        <span class="detail-toggle">Details</span>
+                        <span class="detail-toggle">${escapeHtml(profile.ui.details)}</span>
                     </summary>
                     <div class="dossier-body">
                         <ul class="timeline-list">${renderList(item.highlights)}</ul>
@@ -176,7 +202,7 @@ function renderEducation() {
     educationGrid.innerHTML = profile.education
         .map(
             (item) => `
-                <article class="stack-card reveal">
+                <article class="stack-card reveal is-visible">
                     <span class="stack-label">${escapeHtml(item.degree)}</span>
                     <h3 class="stack-title">${escapeHtml(item.school)}</h3>
                     <p class="stack-copy">${escapeHtml(item.focus)}</p>
@@ -191,7 +217,7 @@ function renderAwards() {
     awardsGrid.innerHTML = profile.awards
         .map(
             (item) => `
-                <article class="stack-card reveal">
+                <article class="stack-card reveal is-visible">
                     <span class="stack-label">${escapeHtml(item.year)}</span>
                     <h3 class="stack-title">${escapeHtml(item.title)}</h3>
                     <p class="stack-copy">${escapeHtml(item.organization)}</p>
@@ -207,7 +233,7 @@ function renderPublications() {
     publicationsGrid.innerHTML = profile.publications
         .map(
             (item) => `
-                <article class="publication-entry reveal">
+                <article class="publication-entry reveal is-visible">
                     <div class="publication-topline">
                         <div>
                             <h3 class="publication-title">${escapeHtml(item.title)}</h3>
@@ -226,38 +252,100 @@ function renderPublications() {
 function renderContact() {
     const contactCard = document.getElementById("contactCard");
     const site = profile.site;
+    const labels = profile.ui.contactLabels;
 
     contactCard.innerHTML = `
         <div class="contact-block">
-            <p class="contact-label">Email</p>
+            <p class="contact-label">${escapeHtml(labels.email)}</p>
             <p class="contact-value"><a class="contact-link" href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a></p>
         </div>
         <div class="contact-block">
-            <p class="contact-label">LinkedIn</p>
+            <p class="contact-label">${escapeHtml(labels.linkedin)}</p>
             <p class="contact-value"><a class="contact-link" href="${escapeHtml(site.linkedin)}" target="_blank" rel="noopener noreferrer">${escapeHtml(site.linkedinLabel)}</a></p>
         </div>
         <div class="contact-block">
-            <p class="contact-label">GitHub</p>
+            <p class="contact-label">${escapeHtml(labels.github)}</p>
             <p class="contact-value"><a class="contact-link" href="${escapeHtml(site.github)}" target="_blank" rel="noopener noreferrer">${escapeHtml(site.githubLabel)}</a></p>
         </div>
         <div class="contact-block">
-            <p class="contact-label">Focus</p>
+            <p class="contact-label">${escapeHtml(labels.focus)}</p>
             <p class="contact-copy">${escapeHtml(site.contactNote)}</p>
         </div>
     `;
 }
 
+function renderLanguageSwitch() {
+    document.querySelectorAll(".language-button").forEach((button) => {
+        const isActive = button.dataset.language === currentLanguage;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+}
+
+function renderPage() {
+    renderLanguageSwitch();
+    renderNavigation();
+    renderSectionCopy();
+    renderHero();
+    renderFocusAreas();
+    renderProjects();
+    renderResearch();
+    renderExperience();
+    renderEducation();
+    renderAwards();
+    renderPublications();
+    renderContact();
+    setText("currentYear", new Date().getFullYear());
+}
+
+function setupLanguageSwitch() {
+    const languageSwitch = document.getElementById("languageSwitch");
+    languageSwitch.addEventListener("click", (event) => {
+        const button = event.target.closest(".language-button");
+        if (!button) {
+            return;
+        }
+
+        const nextLanguage = button.dataset.language;
+        if (!languageStore[nextLanguage] || nextLanguage === currentLanguage) {
+            return;
+        }
+
+        currentLanguage = nextLanguage;
+        profile = languageStore[currentLanguage];
+        renderPage();
+        updateActiveLink();
+    });
+}
+
+function closeMenu() {
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    navMenu.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
+}
+
+function updateActiveLink() {
+    const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+    const sections = Array.from(document.querySelectorAll("main section[id]"));
+    const offset = 140;
+    let currentId = sections[0]?.id ?? "";
+
+    sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - offset) {
+            currentId = section.id;
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
+    });
+}
+
 function setupNavigation() {
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
-    const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-    const sections = Array.from(document.querySelectorAll("main section[id]"));
-
-    function closeMenu() {
-        navMenu.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("nav-open");
-    }
 
     navToggle.addEventListener("click", () => {
         const isOpen = navMenu.classList.toggle("is-open");
@@ -265,24 +353,11 @@ function setupNavigation() {
         document.body.classList.toggle("nav-open", isOpen);
     });
 
-    navLinks.forEach((link) => {
-        link.addEventListener("click", closeMenu);
+    navMenu.addEventListener("click", (event) => {
+        if (event.target.closest(".nav-link")) {
+            closeMenu();
+        }
     });
-
-    function updateActiveLink() {
-        const offset = 140;
-        let currentId = sections[0]?.id ?? "";
-
-        sections.forEach((section) => {
-            if (window.scrollY >= section.offsetTop - offset) {
-                currentId = section.id;
-            }
-        });
-
-        navLinks.forEach((link) => {
-            link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
-        });
-    }
 
     window.addEventListener("scroll", updateActiveLink, { passive: true });
     updateActiveLink();
@@ -314,18 +389,10 @@ function initialize() {
         return;
     }
 
-    renderHero();
-    renderFocusAreas();
-    renderProjects();
-    renderResearch();
-    renderExperience();
-    renderEducation();
-    renderAwards();
-    renderPublications();
-    renderContact();
+    renderPage();
+    setupLanguageSwitch();
     setupNavigation();
     setupReveal();
-    setText("currentYear", new Date().getFullYear());
 }
 
 initialize();

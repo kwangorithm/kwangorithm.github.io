@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kwangorithm portfolio for defense AI, radar systems, and sensor fusion architecture.">
-    <meta name="theme-color" content="#081014">
-    <title>Kwangorithm | Defense AI / Sensor Fusion Architect</title>
+    <meta name="description" content="Kwang Yong Jung portfolio for defense AI, radar systems, sensor fusion architecture, and R&D strategy.">
+    <meta name="theme-color" content="#f6f8fa">
+    <title>Kwangorithm | Defense AI · Radar Systems · Sensor Fusion Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -21,13 +21,10 @@
                 <span></span>
                 <span></span>
             </button>
-            <div class="nav-menu" id="navMenu">
-                <a class="nav-link" href="#overview">Overview</a>
-                <a class="nav-link" href="#projects">Projects</a>
-                <a class="nav-link" href="#research">Research</a>
-                <a class="nav-link" href="#timeline">Timeline</a>
-                <a class="nav-link" href="#publications">Publications</a>
-                <a class="nav-link" href="#contact">Contact</a>
+            <div class="nav-menu" id="navMenu"></div>
+            <div class="language-switch" role="group" aria-label="Language" id="languageSwitch">
+                <button class="language-button is-active" type="button" data-language="ko" aria-pressed="true">한국어</button>
+                <button class="language-button" type="button" data-language="en" aria-pressed="false">English</button>
             </div>
         </div>
     </nav>
@@ -36,17 +33,17 @@
         <section id="hero" class="hero">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
-                    <p class="eyebrow" id="heroEyebrow">GitHub Pages Portfolio</p>
+                    <p class="eyebrow" id="heroEyebrow">GitHub Light Portfolio</p>
                     <h1 id="heroName">Kwang Yong Jung</h1>
-                    <p class="hero-title" id="heroTitle">Defense AI / Sensor Fusion Architect</p>
+                    <p class="hero-title" id="heroTitle">Defense AI · Radar Systems · Sensor Fusion Architect</p>
                     <p class="hero-summary" id="heroSummary">
-                        Radar systems, AI-enabled sensing, and mission-level decision architecture를 잇는 기술 포트폴리오.
+                        20년 이상 레이다 체계, AI 기반 탐지/분류, Radar-EO/IR 센서 융합을 연결해 온 실전형 시스템 아키텍트입니다.
                     </p>
                     <div class="hero-highlights" id="heroHighlights"></div>
                     <div class="hero-actions">
-                        <a class="button button-primary" id="heroGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a class="button button-secondary" id="heroLinkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a class="button button-secondary" href="#projects">Selected Work</a>
+                        <a class="button button-primary" id="heroGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
+                        <a class="button button-secondary" id="heroLinkedin" href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn 보기</a>
+                        <a class="button button-secondary" id="selectedWorkLink" href="#projects">핵심 프로젝트</a>
                     </div>
                 </div>
 
@@ -58,10 +55,10 @@
                     <div class="metrics-grid" id="metricsGrid"></div>
                     <div class="profile-note">
                         <p id="resumeNote">
-                            LinkedIn 기반 이력과 직접 큐레이션한 프로젝트 성과를 함께 관리합니다.
+                            LinkedIn 기반 이력과 직접 큐레이션한 프로젝트 성과를 밝고 읽기 쉬운 기술 포트폴리오로 관리합니다.
                         </p>
                         <div class="note-meta">
-                            <span id="syncSource">LinkedIn + manual curation</span>
+                            <span id="syncSource">LinkedIn 기반 + 직접 큐레이션</span>
                             <span id="heroLocation">Seoul, Korea</span>
                         </div>
                     </div>
@@ -72,10 +69,10 @@
         <section id="overview" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-kicker">Overview</p>
-                    <h2>기술, 전략, 연구를 한 곳에 모으는 개인 허브</h2>
-                    <p class="section-lead">
-                        경력 소개와 프로젝트 기록을 분리해 더 짧고 또렷하게 읽히도록 구성했습니다.
+                    <p class="section-kicker" id="overviewKicker">Overview</p>
+                    <h2 id="overviewTitle">레이다 체계, AI, 전략형 R&D를 연결하는 커리어 허브</h2>
+                    <p class="section-lead" id="overviewLead">
+                        이력의 흐름을 밝은 톤으로 재구성해 전문 영역, 프로젝트 역할, 연구 확장성을 빠르게 파악할 수 있게 했습니다.
                     </p>
                 </div>
                 <div class="focus-grid" id="focusGrid"></div>
@@ -85,10 +82,10 @@
         <section id="projects" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-kicker">Selected Projects</p>
-                    <h2>성과와 역할이 분리되어 보이도록 정리한 핵심 프로젝트</h2>
-                    <p class="section-lead">
-                        요약은 짧게, 상세는 펼쳐서 보는 구조로 정리했습니다.
+                    <p class="section-kicker" id="projectsKicker">Selected Projects</p>
+                    <h2 id="projectsTitle">역할과 성과가 분명하게 드러나는 대표 프로젝트</h2>
+                    <p class="section-lead" id="projectsLead">
+                        방공 레이다 체계 개발부터 AI 기반 센서 융합 아키텍처까지, 실무 책임과 산출물을 분리해 정리했습니다.
                     </p>
                 </div>
                 <div class="project-grid" id="projectsGrid"></div>
@@ -98,10 +95,10 @@
         <section id="research" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-kicker">Research</p>
-                    <h2>연구 확장성을 염두에 둔 아젠다 맵</h2>
-                    <p class="section-lead">
-                        연구 주제는 한 줄 설명과 키워드 중심으로 정리했습니다.
+                    <p class="section-kicker" id="researchKicker">Research Agenda</p>
+                    <h2 id="researchTitle">박사 연구와 현장 문제를 잇는 연구 아젠다</h2>
+                    <p class="section-lead" id="researchLead">
+                        Evidence Theory, 딥러닝, Radar-EO/IR 융합, AI-enabled C2를 논문과 기술 노트로 확장할 수 있는 형태로 구성했습니다.
                     </p>
                 </div>
                 <div class="research-grid" id="researchGrid"></div>
@@ -111,32 +108,32 @@
         <section id="timeline" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-kicker">Timeline</p>
-                    <h2>경력, 학력, 수상 흐름을 한 눈에</h2>
-                    <p class="section-lead">
-                        연혁은 핵심만 먼저 보이고, 세부 내용은 필요할 때 열어볼 수 있습니다.
+                    <p class="section-kicker" id="timelineKicker">Timeline</p>
+                    <h2 id="timelineTitle">경력, 학력, 수상 흐름을 한눈에</h2>
+                    <p class="section-lead" id="timelineLead">
+                        현재 역할과 장기 경험, 학문적 기반, 외부 검증 포인트를 함께 보여줍니다.
                     </p>
                 </div>
                 <div class="timeline-layout">
                     <div>
                         <div class="subsection-head reveal">
-                            <h3>Experience</h3>
-                            <p>실무 책임 범위와 전환 포인트</p>
+                            <h3 id="experienceTitle">Experience</h3>
+                            <p id="experienceLead">실무 책임 범위와 전환 포인트</p>
                         </div>
                         <div class="timeline-stack" id="experienceGrid"></div>
                     </div>
                     <div class="side-column">
                         <div>
                             <div class="subsection-head reveal">
-                                <h3>Education</h3>
-                                <p>학문적 기반과 연구 방향</p>
+                                <h3 id="educationTitle">Education</h3>
+                                <p id="educationLead">학문적 기반과 연구 방향</p>
                             </div>
                             <div class="stack-list" id="educationGrid"></div>
                         </div>
                         <div>
                             <div class="subsection-head reveal">
-                                <h3>Awards</h3>
-                                <p>외부 검증 포인트</p>
+                                <h3 id="awardsTitle">Awards</h3>
+                                <p id="awardsLead">외부 검증과 조직 내 성과</p>
                             </div>
                             <div class="stack-list" id="awardsGrid"></div>
                         </div>
@@ -148,10 +145,10 @@
         <section id="publications" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-kicker">Publications & Writing</p>
-                    <h2>논문과 기술 기록을 위한 확장 구간</h2>
-                    <p class="section-lead">
-                        논문, 기술 노트, 발표 자료를 같은 패턴으로 계속 추가할 수 있습니다.
+                    <p class="section-kicker" id="publicationsKicker">Publications & Writing</p>
+                    <h2 id="publicationsTitle">논문과 기술 기록으로 확장되는 전문성</h2>
+                    <p class="section-lead" id="publicationsLead">
+                        완료된 박사 연구 기반 자산과 향후 작성할 센서 융합·C2 기술 노트를 같은 패턴으로 관리합니다.
                     </p>
                 </div>
                 <div class="publication-grid" id="publicationsGrid"></div>
@@ -161,10 +158,10 @@
         <section id="contact" class="section section-contact">
             <div class="container contact-shell reveal">
                 <div>
-                    <p class="section-kicker">Contact</p>
-                    <h2>기술 협업, 연구 제안, 전략 논의 연결 창구</h2>
-                    <p class="section-lead">
-                        이 사이트는 커리어 소개를 넘어서 향후 연구 협업과 프로젝트 검증 링크를 연결하는 시작점입니다.
+                    <p class="section-kicker" id="contactKicker">Contact</p>
+                    <h2 id="contactTitle">기술 협업, 연구 제안, 전략 논의 연결 창구</h2>
+                    <p class="section-lead" id="contactLead">
+                        경력 소개를 넘어 공동 연구, 기술 제안, 프로젝트 검증 링크를 연결하는 시작점입니다.
                     </p>
                 </div>
                 <div class="contact-card" id="contactCard"></div>
@@ -176,11 +173,11 @@
         <div class="container footer-content">
             <div>
                 <p class="footer-brand">Kwangorithm</p>
-                <p class="footer-copy">Defense AI, radar systems, sensor fusion, and technical strategy.</p>
+                <p class="footer-copy" id="footerCopy">Defense AI, radar systems, sensor fusion, and technical strategy.</p>
             </div>
             <div class="footer-links">
                 <a id="footerGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a id="footerLinkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a id="footerLinkedin" href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a id="footerEmail" href="mailto:kyjung@yonsei.ac.kr">Email</a>
             </div>
             <p class="footer-year">© <span id="currentYear"></span> Kwang Yong Jung</p>

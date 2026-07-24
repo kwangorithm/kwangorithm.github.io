@@ -3,6 +3,8 @@
 GitHub Pages 기반 개인 기술 포트폴리오입니다.  
 밝은 **GitHub Light** 톤의 UI로 레이다 시스템, Defense AI, Radar-EO/IR 센서 융합, 전략형 R&D 이력을 한국어와 영어 두 버전으로 보여줍니다.
 
+첫 화면은 이력서가 아니라 **Dashboard**입니다. Vision/Mission/North Star, 오늘·이번 주·이번 달 할 일 체크리스트, Phase별 진행률, 2026 우선순위와 Stop List를 한 화면에서 확인하고, 경력/프로젝트/논문은 그 아래로 이어집니다.
+
 ## 구조
 
 ```text
@@ -13,8 +15,13 @@ GitHub Pages 기반 개인 기술 포트폴리오입니다.
 ├── data/
 │   ├── linkedin-source.json
 │   └── profile.js
-└── scripts/
-    └── linkedin_to_profile.py
+├── scripts/
+│   └── linkedin_to_profile.py
+└── .github/
+    └── ISSUE_TEMPLATE/
+        ├── roadmap-task.md
+        ├── weekly-review.md
+        └── config.yml
 ```
 
 ## 배포
@@ -43,10 +50,47 @@ python3 scripts/linkedin_to_profile.py
 - 메인 문구: `data/linkedin-source.json > languages.[ko|en] > site`
 - 내비게이션/섹션 문구: `data/linkedin-source.json > languages.[ko|en] > ui`
 - 전문 영역: `data/linkedin-source.json > languages.[ko|en] > focusAreas`
+- 로드맵: `data/linkedin-source.json > languages.[ko|en] > roadmap`
+- 매일/매주/매월 할 일: `data/linkedin-source.json > languages.[ko|en] > routines`
 - 프로젝트: `data/linkedin-source.json > languages.[ko|en] > projects`
 - 연구 주제: `data/linkedin-source.json > languages.[ko|en] > research`
 - 경력/학력/수상: `data/linkedin-source.json > languages.[ko|en] > experience`, `education`, `awards`
 - 논문/기술노트: `data/linkedin-source.json > languages.[ko|en] > publications`
+
+## Roadmap 데이터 구조
+
+`roadmap` 항목은 Defense Sensor Foundation Framework 로드맵을 데이터로 관리합니다.
+
+- `vision` / `mission` / `northStar`: 상단 배너에 표시되는 세 문장
+- `phases`: Phase 1~5 배열. 각 phase는 `id`(`phase-1`~`phase-5`), `period`, `title`, `goal`, `deliverables`, `completionCriteria`, `status`, `progress`(0~100)를 가짐
+- `priorities2026`: 올해 우선순위 목록. `rank`, `title`, `status`
+- `stopList`: 하지 않을 일 목록
+
+`status` 값은 `"done" | "in-progress" | "todo"` 세 가지만 사용합니다.
+
+`projects` / `research` / `publications` 항목에는 선택적으로 `"phase": "phase-1"` 같은 필드를 추가해 해당 Phase와 연결된 배지를 표시할 수 있습니다.
+
+이슈 작업이 진행되어 Phase나 우선순위 상태가 바뀌면, `linkedin-source.json`의 `status`/`progress` 값을 직접 갱신한 뒤 `scripts/linkedin_to_profile.py`를 다시 실행하세요. 사이트는 GitHub API를 실시간으로 호출하지 않고, 이 데이터를 기준으로만 렌더링합니다.
+
+## Daily / Weekly / Monthly 체크리스트
+
+`routines` 항목은 Dashboard의 Today · This Week · This Month 카드에 표시되는 반복 할 일 목록입니다.
+
+- `daily`: `research` / `technical` / `record` 세 그룹으로 나뉜 항목 배열
+- `weekly`, `monthly`: 평평한 항목 배열
+
+각 항목은 `{ "id": "...", "label": "..." }` 형태이며, `id`는 한국어/영어 데이터에서 동일해야 합니다. 체크 상태는 브라우저의 `localStorage`에 `id` 기준으로 저장되기 때문에, `id`가 언어와 무관하게 같아야 언어를 전환해도 체크 상태가 유지됩니다.
+
+체크한 항목은 이 브라우저에만 저장되며(다른 기기·브라우저에는 반영되지 않음), daily는 매일, weekly는 ISO 주 단위, monthly는 매월 자동으로 초기화됩니다. 항목 문구를 바꾸고 싶으면 `label`만 수정하면 되고, `id`는 그대로 유지해야 기존 체크 기록이 깨지지 않습니다.
+
+## 이슈 관리
+
+`.github/ISSUE_TEMPLATE/`에 두 가지 템플릿이 있습니다.
+
+- **Roadmap Task**: 로드맵을 진행시키는 구체적인 작업 단위. Phase, 관련 컴포넌트(Encoder/Fusion/EDL/Dataset/Docs), 산출물, 완료 기준을 기록합니다. `roadmap`, `phase-N` 라벨이 자동으로 붙습니다.
+- **Weekly Review**: 매주 Mission Review, Progress Dashboard(%), Next 3 Tasks, Stop List Review를 기록하는 템플릿입니다. `weekly-review` 라벨이 자동으로 붙습니다.
+
+라벨은 별도로 미리 만들어두지 않았습니다. 템플릿으로 이슈를 처음 등록하면 GitHub가 필요한 라벨을 자동으로 생성합니다.
 
 ## 로컬 확인
 

@@ -41,6 +41,10 @@ window.PORTFOLIO_PROFILE = {
         },
         "nav": [
           {
+            "href": "#dashboard",
+            "label": "Dashboard"
+          },
+          {
             "href": "#overview",
             "label": "Overview"
           },
@@ -66,6 +70,11 @@ window.PORTFOLIO_PROFILE = {
           }
         ],
         "sections": {
+          "dashboard": {
+            "kicker": "Research OS",
+            "title": "오늘의 Defense Sensor Foundation Framework 대시보드",
+            "lead": "Vision, 오늘/이번 주/이번 달 할 일, Phase별 진행률을 한 화면에서 확인합니다."
+          },
           "overview": {
             "kicker": "Overview",
             "title": "레이다 체계, AI, 전략형 R&D를 연결하는 커리어 허브",
@@ -178,6 +187,7 @@ window.PORTFOLIO_PROFILE = {
             "Fusion",
             "Mission Systems"
           ],
+          "phase": "phase-1",
           "contribution": [
             "AI 기반 레이다 및 센서 융합 시스템의 개념 설계와 기술 구조 정리 주도",
             "글로벌 협력형 제안에 필요한 아키텍처, 역할 분담, 기술 메시지 정제",
@@ -378,7 +388,8 @@ window.PORTFOLIO_PROFILE = {
             "Fusion",
             "EO/IR",
             "Decision Support"
-          ]
+          ],
+          "phase": "phase-2"
         },
         {
           "title": "AI-enabled C2 for Defense Mission Systems",
@@ -389,9 +400,236 @@ window.PORTFOLIO_PROFILE = {
             "C2",
             "MUM-T",
             "Architecture"
-          ]
+          ],
+          "phase": "phase-3"
         }
-      ]
+      ],
+      "roadmap": {
+        "vision": "2032년까지 세계 최초의 Defense Sensor Foundation Framework를 구축하고, 이를 기반으로 국방 AI 플랫폼을 제안하는 연구자가 된다.",
+        "mission": "국방 AI를 만드는 표준 Framework를 만든다. 논문을 쓰는 것이 목적이 아니다. 제품을 만드는 것도 목적이 아니다. Framework를 만드는 것이 목적이다.",
+        "northStar": "이 연구가 Defense Sensor Foundation Framework를 더 강하게 만드는가?",
+        "phases": [
+          {
+            "id": "phase-1",
+            "period": "2026 - 2027",
+            "title": "Foundation 구축",
+            "goal": "Sensor Foundation Framework v1 설계",
+            "deliverables": [
+              "SensorFM Architecture",
+              "Radar Encoder",
+              "EO Encoder",
+              "Cross-modal Fusion",
+              "EDL Module",
+              "GitHub Repository 구축",
+              "SCI 논문 2편 이상"
+            ],
+            "completionCriteria": "Framework가 돌아간다.",
+            "status": "in-progress",
+            "progress": 10
+          },
+          {
+            "id": "phase-2",
+            "period": "2027 - 2028",
+            "title": "Foundation Model",
+            "goal": "공통 Representation Learning 구축",
+            "deliverables": [
+              "Multi-Sensor Dataset",
+              "Self-supervised Learning",
+              "Adapter Learning",
+              "Common Latent Space"
+            ],
+            "completionCriteria": "Radar와 EO가 같은 Feature Space에서 표현된다.",
+            "status": "todo",
+            "progress": 0
+          },
+          {
+            "id": "phase-3",
+            "period": "2028 - 2029",
+            "title": "Defense Physical AI",
+            "goal": "Sensor에서 World Model로",
+            "deliverables": [
+              "Tracking",
+              "Memory",
+              "Temporal Learning",
+              "World Model",
+              "Situation Awareness"
+            ],
+            "completionCriteria": "센서를 이해하는 AI에서 세상을 이해하는 AI로 발전.",
+            "status": "todo",
+            "progress": 0
+          },
+          {
+            "id": "phase-4",
+            "period": "2029 - 2030",
+            "title": "Open Framework",
+            "goal": "누구나 사용할 수 있는 오픈 프레임워크 공개",
+            "deliverables": [
+              "SensorFM v1",
+              "GitHub",
+              "Documentation",
+              "Tutorial",
+              "Examples"
+            ],
+            "completionCriteria": "누구나 사용할 수 있다.",
+            "status": "todo",
+            "progress": 0
+          },
+          {
+            "id": "phase-5",
+            "period": "2030 - 2032",
+            "title": "국방 AI 플랫폼",
+            "goal": "Framework를 국방 AI 플랫폼과 표준으로 확장",
+            "deliverables": [
+              "국가과제 PI",
+              "방사청 자문",
+              "ADD 협력",
+              "표준화 활동",
+              "교수 지원"
+            ],
+            "completionCriteria": "국방 AI 플랫폼 제안자로 인정받는다.",
+            "status": "todo",
+            "progress": 0
+          }
+        ],
+        "priorities2026": [
+          {
+            "rank": 1,
+            "title": "Sensor Foundation Framework 설계문서",
+            "status": "todo"
+          },
+          {
+            "rank": 2,
+            "title": "GitHub 구조 생성 (sensorfm / dataset / encoder / fusion / foundation / adapter / tasks / deploy)",
+            "status": "todo"
+          },
+          {
+            "rank": 3,
+            "title": "Radar Encoder 구현",
+            "status": "todo"
+          },
+          {
+            "rank": 4,
+            "title": "EO Encoder 구현",
+            "status": "todo"
+          },
+          {
+            "rank": 5,
+            "title": "Cross Attention 구현",
+            "status": "todo"
+          },
+          {
+            "rank": 6,
+            "title": "EDL Module",
+            "status": "todo"
+          },
+          {
+            "rank": 7,
+            "title": "첫 번째 Demo (EO + Radar Fusion)",
+            "status": "todo"
+          },
+          {
+            "rank": 8,
+            "title": "Sensor Foundation Framework 개념 논문",
+            "status": "todo"
+          }
+        ],
+        "stopList": [
+          "단순 YOLO 성능 경쟁",
+          "일회성 모델 개선만을 위한 연구",
+          "방향성과 무관한 AI 과제",
+          "프레임워크와 연결되지 않는 사이드 프로젝트"
+        ]
+      },
+      "routines": {
+        "daily": {
+          "research": [
+            {
+              "id": "daily-commit",
+              "label": "코드 1 commit"
+            },
+            {
+              "id": "daily-read",
+              "label": "논문 30분 읽기"
+            },
+            {
+              "id": "daily-doc",
+              "label": "Framework 문서 1페이지 작성"
+            },
+            {
+              "id": "daily-issue",
+              "label": "아이디어 GitHub Issue 등록"
+            }
+          ],
+          "technical": [
+            {
+              "id": "daily-encoder",
+              "label": "Encoder 개선"
+            },
+            {
+              "id": "daily-fusion",
+              "label": "Fusion 개선"
+            },
+            {
+              "id": "daily-edl",
+              "label": "EDL 개선"
+            }
+          ],
+          "record": [
+            {
+              "id": "daily-linkedin",
+              "label": "LinkedIn 글 1개 (주 1회)"
+            },
+            {
+              "id": "daily-github",
+              "label": "GitHub 업데이트"
+            },
+            {
+              "id": "daily-note",
+              "label": "연구노트 작성"
+            }
+          ]
+        },
+        "weekly": [
+          {
+            "id": "weekly-feature",
+            "label": "기능 1개 완료"
+          },
+          {
+            "id": "weekly-refactor",
+            "label": "코드 Refactoring"
+          },
+          {
+            "id": "weekly-paper",
+            "label": "논문 1편 정리"
+          },
+          {
+            "id": "weekly-review",
+            "label": "아키텍처 리뷰"
+          },
+          {
+            "id": "weekly-plan",
+            "label": "다음 주 계획 작성"
+          }
+        ],
+        "monthly": [
+          {
+            "id": "monthly-demo",
+            "label": "Demo 업데이트"
+          },
+          {
+            "id": "monthly-slides",
+            "label": "발표자료 업데이트"
+          },
+          {
+            "id": "monthly-release",
+            "label": "GitHub Release"
+          },
+          {
+            "id": "monthly-sci",
+            "label": "SCI 진행률 점검"
+          }
+        ]
+      }
     },
     "en": {
       "site": {
@@ -433,6 +671,10 @@ window.PORTFOLIO_PROFILE = {
         },
         "nav": [
           {
+            "href": "#dashboard",
+            "label": "Dashboard"
+          },
+          {
             "href": "#overview",
             "label": "Overview"
           },
@@ -458,6 +700,11 @@ window.PORTFOLIO_PROFILE = {
           }
         ],
         "sections": {
+          "dashboard": {
+            "kicker": "Research OS",
+            "title": "Today's Defense Sensor Foundation Framework Dashboard",
+            "lead": "Vision, today/this week/this month's tasks, and phase-by-phase progress in one screen."
+          },
           "overview": {
             "kicker": "Overview",
             "title": "A career hub for radar systems, AI, and strategic R&D",
@@ -570,6 +817,7 @@ window.PORTFOLIO_PROFILE = {
             "Fusion",
             "Mission Systems"
           ],
+          "phase": "phase-1",
           "contribution": [
             "Led concept design and technical structuring for AI-enabled radar and sensor fusion systems",
             "Refined architecture, role split, and technical messaging for global collaboration proposals",
@@ -770,7 +1018,8 @@ window.PORTFOLIO_PROFILE = {
             "Fusion",
             "EO/IR",
             "Decision Support"
-          ]
+          ],
+          "phase": "phase-2"
         },
         {
           "title": "AI-enabled C2 for Defense Mission Systems",
@@ -781,9 +1030,236 @@ window.PORTFOLIO_PROFILE = {
             "C2",
             "MUM-T",
             "Architecture"
-          ]
+          ],
+          "phase": "phase-3"
         }
-      ]
+      ],
+      "roadmap": {
+        "vision": "Build the world's first Defense Sensor Foundation Framework by 2032, and become the researcher who proposes a defense AI platform on top of it.",
+        "mission": "Build the standard framework for making defense AI. The goal is not to write papers. The goal is not to ship a product. The goal is to build the framework.",
+        "northStar": "Does this piece of work make the Defense Sensor Foundation Framework stronger?",
+        "phases": [
+          {
+            "id": "phase-1",
+            "period": "2026 - 2027",
+            "title": "Foundation",
+            "goal": "Design Sensor Foundation Framework v1",
+            "deliverables": [
+              "SensorFM Architecture",
+              "Radar Encoder",
+              "EO Encoder",
+              "Cross-modal Fusion",
+              "EDL Module",
+              "GitHub repository",
+              "2+ SCI papers"
+            ],
+            "completionCriteria": "The framework runs end to end.",
+            "status": "in-progress",
+            "progress": 10
+          },
+          {
+            "id": "phase-2",
+            "period": "2027 - 2028",
+            "title": "Foundation Model",
+            "goal": "Build a shared representation learning core",
+            "deliverables": [
+              "Multi-sensor dataset",
+              "Self-supervised learning",
+              "Adapter learning",
+              "Common latent space"
+            ],
+            "completionCriteria": "Radar and EO are represented in the same feature space.",
+            "status": "todo",
+            "progress": 0
+          },
+          {
+            "id": "phase-3",
+            "period": "2028 - 2029",
+            "title": "Defense Physical AI",
+            "goal": "Move from sensors to a world model",
+            "deliverables": [
+              "Tracking",
+              "Memory",
+              "Temporal learning",
+              "World model",
+              "Situation awareness"
+            ],
+            "completionCriteria": "The system evolves from understanding sensors to understanding the world.",
+            "status": "todo",
+            "progress": 0
+          },
+          {
+            "id": "phase-4",
+            "period": "2029 - 2030",
+            "title": "Open Framework",
+            "goal": "Release an open framework anyone can use",
+            "deliverables": [
+              "SensorFM v1",
+              "GitHub",
+              "Documentation",
+              "Tutorial",
+              "Examples"
+            ],
+            "completionCriteria": "Anyone can use it.",
+            "status": "todo",
+            "progress": 0
+          },
+          {
+            "id": "phase-5",
+            "period": "2030 - 2032",
+            "title": "Defense AI Platform",
+            "goal": "Grow the framework into a defense AI platform and standard",
+            "deliverables": [
+              "National R&D program PI",
+              "DAPA advisory role",
+              "ADD collaboration",
+              "Standardization activity",
+              "Faculty support"
+            ],
+            "completionCriteria": "Recognized as the proposer of a defense AI platform.",
+            "status": "todo",
+            "progress": 0
+          }
+        ],
+        "priorities2026": [
+          {
+            "rank": 1,
+            "title": "Sensor Foundation Framework design document",
+            "status": "todo"
+          },
+          {
+            "rank": 2,
+            "title": "GitHub structure (sensorfm / dataset / encoder / fusion / foundation / adapter / tasks / deploy)",
+            "status": "todo"
+          },
+          {
+            "rank": 3,
+            "title": "Radar Encoder implementation",
+            "status": "todo"
+          },
+          {
+            "rank": 4,
+            "title": "EO Encoder implementation",
+            "status": "todo"
+          },
+          {
+            "rank": 5,
+            "title": "Cross Attention implementation",
+            "status": "todo"
+          },
+          {
+            "rank": 6,
+            "title": "EDL Module",
+            "status": "todo"
+          },
+          {
+            "rank": 7,
+            "title": "First demo (EO + Radar fusion)",
+            "status": "todo"
+          },
+          {
+            "rank": 8,
+            "title": "Sensor Foundation Framework concept paper",
+            "status": "todo"
+          }
+        ],
+        "stopList": [
+          "Chasing raw YOLO benchmark competitions",
+          "Research aimed only at one-off model improvements",
+          "AI tasks unrelated to the framework direction",
+          "Side projects that don't connect back to the framework"
+        ]
+      },
+      "routines": {
+        "daily": {
+          "research": [
+            {
+              "id": "daily-commit",
+              "label": "1 code commit"
+            },
+            {
+              "id": "daily-read",
+              "label": "Read papers for 30 minutes"
+            },
+            {
+              "id": "daily-doc",
+              "label": "Write 1 page of framework docs"
+            },
+            {
+              "id": "daily-issue",
+              "label": "Log an idea as a GitHub issue"
+            }
+          ],
+          "technical": [
+            {
+              "id": "daily-encoder",
+              "label": "Improve encoder"
+            },
+            {
+              "id": "daily-fusion",
+              "label": "Improve fusion"
+            },
+            {
+              "id": "daily-edl",
+              "label": "Improve EDL"
+            }
+          ],
+          "record": [
+            {
+              "id": "daily-linkedin",
+              "label": "1 LinkedIn post (weekly)"
+            },
+            {
+              "id": "daily-github",
+              "label": "Update GitHub"
+            },
+            {
+              "id": "daily-note",
+              "label": "Write research notes"
+            }
+          ]
+        },
+        "weekly": [
+          {
+            "id": "weekly-feature",
+            "label": "Ship 1 feature"
+          },
+          {
+            "id": "weekly-refactor",
+            "label": "Refactor code"
+          },
+          {
+            "id": "weekly-paper",
+            "label": "Organize 1 paper"
+          },
+          {
+            "id": "weekly-review",
+            "label": "Architecture review"
+          },
+          {
+            "id": "weekly-plan",
+            "label": "Write next week's plan"
+          }
+        ],
+        "monthly": [
+          {
+            "id": "monthly-demo",
+            "label": "Update demo"
+          },
+          {
+            "id": "monthly-slides",
+            "label": "Update slides"
+          },
+          {
+            "id": "monthly-release",
+            "label": "GitHub release"
+          },
+          {
+            "id": "monthly-sci",
+            "label": "Check SCI progress"
+          }
+        ]
+      }
     }
   }
 };

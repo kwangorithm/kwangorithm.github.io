@@ -13,6 +13,8 @@ REQUIRED_TOP_LEVEL_KEYS = [
     "metrics",
     "highlights",
     "focusAreas",
+    "roadmap",
+    "routines",
     "projects",
     "research",
     "experience",

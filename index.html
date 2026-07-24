@@ -31,23 +31,33 @@
 
     <main>
         <section id="hero" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-copy reveal">
-                    <p class="eyebrow" id="heroEyebrow">GitHub Light Portfolio</p>
-                    <h1 id="heroName">Kwang Yong Jung</h1>
-                    <p class="hero-title" id="heroTitle">Defense AI · Radar Systems · Sensor Fusion Architect</p>
-                    <p class="hero-summary" id="heroSummary">
-                        20년 이상 레이다 체계, AI 기반 탐지/분류, Radar-EO/IR 센서 융합을 연결해 온 실전형 시스템 아키텍트입니다.
+            <div class="container hero-copy reveal">
+                <p class="eyebrow" id="heroEyebrow">GitHub Light Portfolio</p>
+                <h1 id="heroName">Kwang Yong Jung</h1>
+                <p class="hero-title" id="heroTitle">Defense AI · Radar Systems · Sensor Fusion Architect</p>
+                <p class="hero-summary" id="heroSummary">
+                    20년 이상 레이다 체계, AI 기반 탐지/분류, Radar-EO/IR 센서 융합을 연결해 온 실전형 시스템 아키텍트입니다.
+                </p>
+                <div class="hero-highlights" id="heroHighlights"></div>
+                <div class="hero-actions">
+                    <a class="button button-primary" id="heroGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
+                    <a class="button button-secondary" id="heroLinkedin" href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn 보기</a>
+                    <a class="button button-secondary" id="selectedWorkLink" href="#projects">핵심 프로젝트</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker" id="dashboardKicker">Research OS</p>
+                    <h2 id="dashboardTitle">오늘의 Defense Sensor Foundation Framework 대시보드</h2>
+                    <p class="section-lead" id="dashboardLead">
+                        Vision, 오늘/이번 주/이번 달 할 일, Phase별 진행률을 한 화면에서 확인합니다.
                     </p>
-                    <div class="hero-highlights" id="heroHighlights"></div>
-                    <div class="hero-actions">
-                        <a class="button button-primary" id="heroGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
-                        <a class="button button-secondary" id="heroLinkedin" href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn 보기</a>
-                        <a class="button button-secondary" id="selectedWorkLink" href="#projects">핵심 프로젝트</a>
-                    </div>
                 </div>
 
-                <aside class="hero-panel reveal">
+                <aside class="career-signal reveal is-visible">
                     <div class="panel-topline">
                         <span class="panel-label">Career Signal</span>
                         <span class="panel-sync" id="syncDate">Updated</span>
@@ -63,10 +73,76 @@
                         </div>
                     </div>
                 </aside>
+
+                <div class="north-star-grid reveal is-visible">
+                    <article class="north-star-card">
+                        <h3 class="north-star-label">Vision</h3>
+                        <p id="roadmapVision"></p>
+                    </article>
+                    <article class="north-star-card">
+                        <h3 class="north-star-label">Mission</h3>
+                        <p id="roadmapMission"></p>
+                    </article>
+                    <article class="north-star-card north-star-question">
+                        <h3 class="north-star-label">North Star</h3>
+                        <p id="roadmapNorthStar"></p>
+                    </article>
+                </div>
+
+                <div class="subsection-head reveal">
+                    <h3 id="routinesTitle">Today · This Week · This Month</h3>
+                    <p id="routinesLead">체크한 항목은 이 브라우저에 저장되고, 주기가 바뀌면 자동으로 초기화됩니다.</p>
+                </div>
+                <div class="routine-grid">
+                    <article class="routine-card">
+                        <div class="routine-card-head">
+                            <h4>Daily</h4>
+                            <span class="routine-count" id="routineDailyCount"></span>
+                        </div>
+                        <div class="routine-groups" id="routineDaily"></div>
+                    </article>
+                    <article class="routine-card">
+                        <div class="routine-card-head">
+                            <h4>Weekly</h4>
+                            <span class="routine-count" id="routineWeeklyCount"></span>
+                        </div>
+                        <div class="routine-list" id="routineWeekly"></div>
+                    </article>
+                    <article class="routine-card">
+                        <div class="routine-card-head">
+                            <h4>Monthly</h4>
+                            <span class="routine-count" id="routineMonthlyCount"></span>
+                        </div>
+                        <div class="routine-list" id="routineMonthly"></div>
+                    </article>
+                </div>
+
+                <div class="subsection-head reveal">
+                    <h3>Phase Progress</h3>
+                    <p>2026 - 2032 Defense Sensor Foundation Framework 로드맵</p>
+                </div>
+                <div class="phase-list" id="roadmapPhases"></div>
+
+                <div class="roadmap-split">
+                    <div>
+                        <div class="subsection-head reveal">
+                            <h3>2026 Focus</h3>
+                            <p>올해 반드시 끝내야 할 우선순위</p>
+                        </div>
+                        <ol class="priority-list" id="roadmapPriorities"></ol>
+                    </div>
+                    <div>
+                        <div class="subsection-head reveal">
+                            <h3>Stop List</h3>
+                            <p>Framework와 연결되지 않으면 하지 않는다</p>
+                        </div>
+                        <div class="stop-list-card" id="roadmapStopList"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="overview" class="section">
+        <section id="overview" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="overviewKicker">Overview</p>
@@ -79,7 +155,7 @@
             </div>
         </section>
 
-        <section id="projects" class="section section-surface">
+        <section id="projects" class="section">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="projectsKicker">Selected Projects</p>
@@ -92,7 +168,7 @@
             </div>
         </section>
 
-        <section id="research" class="section">
+        <section id="research" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="researchKicker">Research Agenda</p>
@@ -105,7 +181,7 @@
             </div>
         </section>
 
-        <section id="timeline" class="section section-surface">
+        <section id="timeline" class="section">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="timelineKicker">Timeline</p>
@@ -142,7 +218,7 @@
             </div>
         </section>
 
-        <section id="publications" class="section">
+        <section id="publications" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="publicationsKicker">Publications & Writing</p>

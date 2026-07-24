@@ -114,6 +114,19 @@ function renderFocusAreas() {
         .join("");
 }
 
+function phaseLabel(phaseId) {
+    if (!phaseId) {
+        return "";
+    }
+    const phase = profile.roadmap?.phases.find((item) => item.id === phaseId);
+    return phase ? `${phase.id.replace("phase-", "Phase ")} · ${phase.title}` : "";
+}
+
+function renderPhaseTag(phaseId) {
+    const label = phaseLabel(phaseId);
+    return label ? `<span class="phase-tag">${escapeHtml(label)}</span>` : "";
+}
+
 function renderProjects() {
     const projectsGrid = document.getElementById("projectsGrid");
     projectsGrid.innerHTML = profile.projects
@@ -130,7 +143,7 @@ function renderProjects() {
                                 <span class="project-period">${escapeHtml(item.period)}</span>
                             </div>
                             <p class="project-summary">${escapeHtml(item.summary)}</p>
-                            <div class="project-tags">${renderTagRow(item.tags)}</div>
+                            <div class="project-tags">${renderTagRow(item.tags)}${renderPhaseTag(item.phase)}</div>
                         </div>
                         <span class="detail-toggle">${escapeHtml(profile.ui.details)}</span>
                     </summary>
@@ -162,7 +175,7 @@ function renderResearch() {
                         <h3 class="research-title">${escapeHtml(item.title)}</h3>
                         <p class="research-body">${escapeHtml(item.description)}</p>
                     </div>
-                    <div class="research-tags entry-tags">${renderTagRow(item.tags)}</div>
+                    <div class="research-tags entry-tags">${renderTagRow(item.tags)}${renderPhaseTag(item.phase)}</div>
                 </article>
             `
         )
@@ -242,11 +255,199 @@ function renderPublications() {
                         <span class="status-pill">${escapeHtml(item.status)}</span>
                     </div>
                     <p class="publication-note">${escapeHtml(item.note)}</p>
-                    <div class="publication-tags entry-tags">${renderTagRow(item.tags)}</div>
+                    <div class="publication-tags entry-tags">${renderTagRow(item.tags)}${renderPhaseTag(item.phase)}</div>
                 </article>
             `
         )
         .join("");
+}
+
+const STATUS_LABEL = {
+    done: { ko: "완료", en: "Done" },
+    "in-progress": { ko: "진행 중", en: "In Progress" },
+    todo: { ko: "예정", en: "To Do" }
+};
+
+function statusLabel(status) {
+    return STATUS_LABEL[status]?.[currentLanguage] ?? status;
+}
+
+function renderRoadmap() {
+    const roadmap = profile.roadmap;
+    if (!roadmap) {
+        return;
+    }
+
+    setText("roadmapVision", roadmap.vision);
+    setText("roadmapMission", roadmap.mission);
+    setText("roadmapNorthStar", roadmap.northStar);
+
+    const phasesList = document.getElementById("roadmapPhases");
+    phasesList.innerHTML = roadmap.phases
+        .map(
+            (phase, index) => `
+                <details class="phase-card reveal is-visible" ${phase.status === "in-progress" || index === 0 ? "open" : ""}>
+                    <summary class="dossier-head">
+                        <div class="dossier-main">
+                            <div class="project-meta">
+                                <div>
+                                    <h3 class="project-title">${escapeHtml(phase.id.replace("phase-", "Phase "))} · ${escapeHtml(phase.title)}</h3>
+                                    <span class="project-role">${escapeHtml(phase.goal)}</span>
+                                </div>
+                                <span class="project-period">${escapeHtml(phase.period)}</span>
+                            </div>
+                            <div class="phase-progress-row">
+                                <span class="status-badge status-${escapeHtml(phase.status)}">${escapeHtml(statusLabel(phase.status))}</span>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="${Number(phase.progress) || 0}" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-fill" style="width: ${Number(phase.progress) || 0}%;"></div>
+                                </div>
+                                <span class="progress-value">${Number(phase.progress) || 0}%</span>
+                            </div>
+                        </div>
+                        <span class="detail-toggle">${escapeHtml(profile.ui.details)}</span>
+                    </summary>
+                    <div class="dossier-body">
+                        <div class="project-list-wrap">
+                            <h4>Deliverables</h4>
+                            <ul class="project-list">${renderList(phase.deliverables)}</ul>
+                        </div>
+                        <p class="phase-completion"><strong>Done when:</strong> ${escapeHtml(phase.completionCriteria)}</p>
+                    </div>
+                </details>
+            `
+        )
+        .join("");
+
+    const prioritiesList = document.getElementById("roadmapPriorities");
+    prioritiesList.innerHTML = roadmap.priorities2026
+        .map(
+            (item) => `
+                <li class="priority-item priority-${escapeHtml(item.status)}">
+                    <span class="priority-rank">${escapeHtml(String(item.rank))}</span>
+                    <span class="priority-title">${escapeHtml(item.title)}</span>
+                    <span class="status-badge status-${escapeHtml(item.status)}">${escapeHtml(statusLabel(item.status))}</span>
+                </li>
+            `
+        )
+        .join("");
+
+    const stopList = document.getElementById("roadmapStopList");
+    stopList.innerHTML = `<ul class="stop-list">${roadmap.stopList
+        .map((item) => `<li>${escapeHtml(item)}</li>`)
+        .join("")}</ul>`;
+}
+
+const ROUTINE_STORAGE_KEY = "kwangorithm.routineChecklist.v1";
+
+const ROUTINE_GROUP_LABEL = {
+    research: { ko: "연구", en: "Research" },
+    technical: { ko: "기술", en: "Technical" },
+    record: { ko: "기록", en: "Record" }
+};
+
+function pad2(value) {
+    return String(value).padStart(2, "0");
+}
+
+function isoWeekKey(date) {
+    const target = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const dayNum = target.getDay() || 7;
+    target.setDate(target.getDate() + 4 - dayNum);
+    const yearStart = new Date(target.getFullYear(), 0, 1);
+    const weekNum = Math.ceil(((target - yearStart) / 86400000 + 1) / 7);
+    return `${target.getFullYear()}-W${pad2(weekNum)}`;
+}
+
+function periodKey(cadence, date = new Date()) {
+    if (cadence === "daily") {
+        return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+    }
+    if (cadence === "monthly") {
+        return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}`;
+    }
+    return isoWeekKey(date);
+}
+
+function loadRoutineState() {
+    try {
+        return JSON.parse(localStorage.getItem(ROUTINE_STORAGE_KEY) || "{}");
+    } catch (error) {
+        return {};
+    }
+}
+
+function saveRoutineState(state) {
+    localStorage.setItem(ROUTINE_STORAGE_KEY, JSON.stringify(state));
+}
+
+function renderRoutineItem(item, cadence, state) {
+    const checked = state[item.id] === periodKey(cadence);
+    return `
+        <label class="routine-item ${checked ? "is-done" : ""}">
+            <input type="checkbox" data-routine-id="${escapeHtml(item.id)}" data-cadence="${escapeHtml(cadence)}" ${checked ? "checked" : ""}>
+            <span>${escapeHtml(item.label)}</span>
+        </label>
+    `;
+}
+
+function renderRoutineCount(id, items, cadence, state) {
+    const done = items.filter((item) => state[item.id] === periodKey(cadence)).length;
+    setText(id, `${done} / ${items.length}`);
+}
+
+function renderRoutines() {
+    const routines = profile.routines;
+    if (!routines) {
+        return;
+    }
+
+    const state = loadRoutineState();
+
+    const dailyContainer = document.getElementById("routineDaily");
+    dailyContainer.innerHTML = Object.entries(routines.daily)
+        .map(
+            ([groupKey, items]) => `
+                <div class="routine-group">
+                    <h5 class="routine-group-title">${escapeHtml(ROUTINE_GROUP_LABEL[groupKey]?.[currentLanguage] ?? groupKey)}</h5>
+                    ${items.map((item) => renderRoutineItem(item, "daily", state)).join("")}
+                </div>
+            `
+        )
+        .join("");
+    renderRoutineCount("routineDailyCount", Object.values(routines.daily).flat(), "daily", state);
+
+    document.getElementById("routineWeekly").innerHTML = routines.weekly
+        .map((item) => renderRoutineItem(item, "weekly", state))
+        .join("");
+    renderRoutineCount("routineWeeklyCount", routines.weekly, "weekly", state);
+
+    document.getElementById("routineMonthly").innerHTML = routines.monthly
+        .map((item) => renderRoutineItem(item, "monthly", state))
+        .join("");
+    renderRoutineCount("routineMonthlyCount", routines.monthly, "monthly", state);
+}
+
+function setupRoutines() {
+    const dashboard = document.getElementById("dashboard");
+    dashboard.addEventListener("change", (event) => {
+        const checkbox = event.target.closest("input[data-routine-id]");
+        if (!checkbox) {
+            return;
+        }
+
+        const state = loadRoutineState();
+        const id = checkbox.dataset.routineId;
+        const cadence = checkbox.dataset.cadence;
+
+        if (checkbox.checked) {
+            state[id] = periodKey(cadence);
+        } else {
+            delete state[id];
+        }
+
+        saveRoutineState(state);
+        renderRoutines();
+    });
 }
 
 function renderContact() {
@@ -288,6 +489,8 @@ function renderPage() {
     renderSectionCopy();
     renderHero();
     renderFocusAreas();
+    renderRoadmap();
+    renderRoutines();
     renderProjects();
     renderResearch();
     renderExperience();
@@ -393,6 +596,7 @@ function initialize() {
     setupLanguageSwitch();
     setupNavigation();
     setupReveal();
+    setupRoutines();
 }
 
 initialize();

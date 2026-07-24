@@ -114,6 +114,19 @@ function renderFocusAreas() {
         .join("");
 }
 
+function phaseLabel(phaseId) {
+    if (!phaseId) {
+        return "";
+    }
+    const phase = profile.roadmap?.phases.find((item) => item.id === phaseId);
+    return phase ? `${phase.id.replace("phase-", "Phase ")} · ${phase.title}` : "";
+}
+
+function renderPhaseTag(phaseId) {
+    const label = phaseLabel(phaseId);
+    return label ? `<span class="phase-tag">${escapeHtml(label)}</span>` : "";
+}
+
 function renderProjects() {
     const projectsGrid = document.getElementById("projectsGrid");
     projectsGrid.innerHTML = profile.projects
@@ -130,7 +143,7 @@ function renderProjects() {
                                 <span class="project-period">${escapeHtml(item.period)}</span>
                             </div>
                             <p class="project-summary">${escapeHtml(item.summary)}</p>
-                            <div class="project-tags">${renderTagRow(item.tags)}</div>
+                            <div class="project-tags">${renderTagRow(item.tags)}${renderPhaseTag(item.phase)}</div>
                         </div>
                         <span class="detail-toggle">${escapeHtml(profile.ui.details)}</span>
                     </summary>
@@ -162,7 +175,7 @@ function renderResearch() {
                         <h3 class="research-title">${escapeHtml(item.title)}</h3>
                         <p class="research-body">${escapeHtml(item.description)}</p>
                     </div>
-                    <div class="research-tags entry-tags">${renderTagRow(item.tags)}</div>
+                    <div class="research-tags entry-tags">${renderTagRow(item.tags)}${renderPhaseTag(item.phase)}</div>
                 </article>
             `
         )
@@ -242,11 +255,86 @@ function renderPublications() {
                         <span class="status-pill">${escapeHtml(item.status)}</span>
                     </div>
                     <p class="publication-note">${escapeHtml(item.note)}</p>
-                    <div class="publication-tags entry-tags">${renderTagRow(item.tags)}</div>
+                    <div class="publication-tags entry-tags">${renderTagRow(item.tags)}${renderPhaseTag(item.phase)}</div>
                 </article>
             `
         )
         .join("");
+}
+
+const STATUS_LABEL = {
+    done: { ko: "완료", en: "Done" },
+    "in-progress": { ko: "진행 중", en: "In Progress" },
+    todo: { ko: "예정", en: "To Do" }
+};
+
+function statusLabel(status) {
+    return STATUS_LABEL[status]?.[currentLanguage] ?? status;
+}
+
+function renderRoadmap() {
+    const roadmap = profile.roadmap;
+    if (!roadmap) {
+        return;
+    }
+
+    setText("roadmapVision", roadmap.vision);
+    setText("roadmapMission", roadmap.mission);
+    setText("roadmapNorthStar", roadmap.northStar);
+
+    const phasesList = document.getElementById("roadmapPhases");
+    phasesList.innerHTML = roadmap.phases
+        .map(
+            (phase, index) => `
+                <details class="phase-card reveal is-visible" ${phase.status === "in-progress" || index === 0 ? "open" : ""}>
+                    <summary class="dossier-head">
+                        <div class="dossier-main">
+                            <div class="project-meta">
+                                <div>
+                                    <h3 class="project-title">${escapeHtml(phase.id.replace("phase-", "Phase "))} · ${escapeHtml(phase.title)}</h3>
+                                    <span class="project-role">${escapeHtml(phase.goal)}</span>
+                                </div>
+                                <span class="project-period">${escapeHtml(phase.period)}</span>
+                            </div>
+                            <div class="phase-progress-row">
+                                <span class="status-badge status-${escapeHtml(phase.status)}">${escapeHtml(statusLabel(phase.status))}</span>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="${Number(phase.progress) || 0}" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-fill" style="width: ${Number(phase.progress) || 0}%;"></div>
+                                </div>
+                                <span class="progress-value">${Number(phase.progress) || 0}%</span>
+                            </div>
+                        </div>
+                        <span class="detail-toggle">${escapeHtml(profile.ui.details)}</span>
+                    </summary>
+                    <div class="dossier-body">
+                        <div class="project-list-wrap">
+                            <h4>Deliverables</h4>
+                            <ul class="project-list">${renderList(phase.deliverables)}</ul>
+                        </div>
+                        <p class="phase-completion"><strong>Done when:</strong> ${escapeHtml(phase.completionCriteria)}</p>
+                    </div>
+                </details>
+            `
+        )
+        .join("");
+
+    const prioritiesList = document.getElementById("roadmapPriorities");
+    prioritiesList.innerHTML = roadmap.priorities2026
+        .map(
+            (item) => `
+                <li class="priority-item priority-${escapeHtml(item.status)}">
+                    <span class="priority-rank">${escapeHtml(String(item.rank))}</span>
+                    <span class="priority-title">${escapeHtml(item.title)}</span>
+                    <span class="status-badge status-${escapeHtml(item.status)}">${escapeHtml(statusLabel(item.status))}</span>
+                </li>
+            `
+        )
+        .join("");
+
+    const stopList = document.getElementById("roadmapStopList");
+    stopList.innerHTML = `<ul class="stop-list">${roadmap.stopList
+        .map((item) => `<li>${escapeHtml(item)}</li>`)
+        .join("")}</ul>`;
 }
 
 function renderContact() {
@@ -288,6 +376,7 @@ function renderPage() {
     renderSectionCopy();
     renderHero();
     renderFocusAreas();
+    renderRoadmap();
     renderProjects();
     renderResearch();
     renderExperience();

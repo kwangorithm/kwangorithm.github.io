@@ -41,12 +41,12 @@ window.PORTFOLIO_PROFILE = {
         },
         "nav": [
           {
-            "href": "#overview",
-            "label": "Overview"
+            "href": "#dashboard",
+            "label": "Dashboard"
           },
           {
-            "href": "#roadmap",
-            "label": "Roadmap"
+            "href": "#overview",
+            "label": "Overview"
           },
           {
             "href": "#projects",
@@ -70,15 +70,15 @@ window.PORTFOLIO_PROFILE = {
           }
         ],
         "sections": {
+          "dashboard": {
+            "kicker": "Research OS",
+            "title": "오늘의 Defense Sensor Foundation Framework 대시보드",
+            "lead": "Vision, 오늘/이번 주/이번 달 할 일, Phase별 진행률을 한 화면에서 확인합니다."
+          },
           "overview": {
             "kicker": "Overview",
             "title": "레이다 체계, AI, 전략형 R&D를 연결하는 커리어 허브",
             "lead": "이력의 흐름을 밝은 톤으로 재구성해 전문 영역, 프로젝트 역할, 연구 확장성을 빠르게 파악할 수 있게 했습니다."
-          },
-          "roadmap": {
-            "kicker": "Research OS",
-            "title": "Defense Sensor Foundation Framework 로드맵",
-            "lead": "2026년부터 2032년까지의 비전, Phase별 목표, 올해의 우선순위와 하지 않을 일을 하나의 실행 시스템으로 관리합니다."
           },
           "projects": {
             "kicker": "Selected Projects",
@@ -539,6 +539,96 @@ window.PORTFOLIO_PROFILE = {
           "방향성과 무관한 AI 과제",
           "프레임워크와 연결되지 않는 사이드 프로젝트"
         ]
+      },
+      "routines": {
+        "daily": {
+          "research": [
+            {
+              "id": "daily-commit",
+              "label": "코드 1 commit"
+            },
+            {
+              "id": "daily-read",
+              "label": "논문 30분 읽기"
+            },
+            {
+              "id": "daily-doc",
+              "label": "Framework 문서 1페이지 작성"
+            },
+            {
+              "id": "daily-issue",
+              "label": "아이디어 GitHub Issue 등록"
+            }
+          ],
+          "technical": [
+            {
+              "id": "daily-encoder",
+              "label": "Encoder 개선"
+            },
+            {
+              "id": "daily-fusion",
+              "label": "Fusion 개선"
+            },
+            {
+              "id": "daily-edl",
+              "label": "EDL 개선"
+            }
+          ],
+          "record": [
+            {
+              "id": "daily-linkedin",
+              "label": "LinkedIn 글 1개 (주 1회)"
+            },
+            {
+              "id": "daily-github",
+              "label": "GitHub 업데이트"
+            },
+            {
+              "id": "daily-note",
+              "label": "연구노트 작성"
+            }
+          ]
+        },
+        "weekly": [
+          {
+            "id": "weekly-feature",
+            "label": "기능 1개 완료"
+          },
+          {
+            "id": "weekly-refactor",
+            "label": "코드 Refactoring"
+          },
+          {
+            "id": "weekly-paper",
+            "label": "논문 1편 정리"
+          },
+          {
+            "id": "weekly-review",
+            "label": "아키텍처 리뷰"
+          },
+          {
+            "id": "weekly-plan",
+            "label": "다음 주 계획 작성"
+          }
+        ],
+        "monthly": [
+          {
+            "id": "monthly-demo",
+            "label": "Demo 업데이트"
+          },
+          {
+            "id": "monthly-slides",
+            "label": "발표자료 업데이트"
+          },
+          {
+            "id": "monthly-release",
+            "label": "GitHub Release"
+          },
+          {
+            "id": "monthly-sci",
+            "label": "SCI 진행률 점검"
+          }
+        ]
       }
     },
     "en": {
@@ -581,12 +671,12 @@ window.PORTFOLIO_PROFILE = {
         },
         "nav": [
           {
-            "href": "#overview",
-            "label": "Overview"
+            "href": "#dashboard",
+            "label": "Dashboard"
           },
           {
-            "href": "#roadmap",
-            "label": "Roadmap"
+            "href": "#overview",
+            "label": "Overview"
           },
           {
             "href": "#projects",
@@ -610,15 +700,15 @@ window.PORTFOLIO_PROFILE = {
           }
         ],
         "sections": {
+          "dashboard": {
+            "kicker": "Research OS",
+            "title": "Today's Defense Sensor Foundation Framework Dashboard",
+            "lead": "Vision, today/this week/this month's tasks, and phase-by-phase progress in one screen."
+          },
           "overview": {
             "kicker": "Overview",
             "title": "A career hub for radar systems, AI, and strategic R&D",
             "lead": "The story is reframed in a brighter tone so visitors can quickly understand domain expertise, project ownership, and research direction."
-          },
-          "roadmap": {
-            "kicker": "Research OS",
-            "title": "Defense Sensor Foundation Framework Roadmap",
-            "lead": "A single execution system connecting the 2026-2032 vision, phase-by-phase goals, this year's priorities, and what not to chase."
           },
           "projects": {
             "kicker": "Selected Projects",
@@ -1078,6 +1168,96 @@ window.PORTFOLIO_PROFILE = {
           "Research aimed only at one-off model improvements",
           "AI tasks unrelated to the framework direction",
           "Side projects that don't connect back to the framework"
+        ]
+      },
+      "routines": {
+        "daily": {
+          "research": [
+            {
+              "id": "daily-commit",
+              "label": "1 code commit"
+            },
+            {
+              "id": "daily-read",
+              "label": "Read papers for 30 minutes"
+            },
+            {
+              "id": "daily-doc",
+              "label": "Write 1 page of framework docs"
+            },
+            {
+              "id": "daily-issue",
+              "label": "Log an idea as a GitHub issue"
+            }
+          ],
+          "technical": [
+            {
+              "id": "daily-encoder",
+              "label": "Improve encoder"
+            },
+            {
+              "id": "daily-fusion",
+              "label": "Improve fusion"
+            },
+            {
+              "id": "daily-edl",
+              "label": "Improve EDL"
+            }
+          ],
+          "record": [
+            {
+              "id": "daily-linkedin",
+              "label": "1 LinkedIn post (weekly)"
+            },
+            {
+              "id": "daily-github",
+              "label": "Update GitHub"
+            },
+            {
+              "id": "daily-note",
+              "label": "Write research notes"
+            }
+          ]
+        },
+        "weekly": [
+          {
+            "id": "weekly-feature",
+            "label": "Ship 1 feature"
+          },
+          {
+            "id": "weekly-refactor",
+            "label": "Refactor code"
+          },
+          {
+            "id": "weekly-paper",
+            "label": "Organize 1 paper"
+          },
+          {
+            "id": "weekly-review",
+            "label": "Architecture review"
+          },
+          {
+            "id": "weekly-plan",
+            "label": "Write next week's plan"
+          }
+        ],
+        "monthly": [
+          {
+            "id": "monthly-demo",
+            "label": "Update demo"
+          },
+          {
+            "id": "monthly-slides",
+            "label": "Update slides"
+          },
+          {
+            "id": "monthly-release",
+            "label": "GitHub release"
+          },
+          {
+            "id": "monthly-sci",
+            "label": "Check SCI progress"
+          }
         ]
       }
     }

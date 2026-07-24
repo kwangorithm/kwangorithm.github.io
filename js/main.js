@@ -337,6 +337,119 @@ function renderRoadmap() {
         .join("")}</ul>`;
 }
 
+const ROUTINE_STORAGE_KEY = "kwangorithm.routineChecklist.v1";
+
+const ROUTINE_GROUP_LABEL = {
+    research: { ko: "연구", en: "Research" },
+    technical: { ko: "기술", en: "Technical" },
+    record: { ko: "기록", en: "Record" }
+};
+
+function pad2(value) {
+    return String(value).padStart(2, "0");
+}
+
+function isoWeekKey(date) {
+    const target = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const dayNum = target.getDay() || 7;
+    target.setDate(target.getDate() + 4 - dayNum);
+    const yearStart = new Date(target.getFullYear(), 0, 1);
+    const weekNum = Math.ceil(((target - yearStart) / 86400000 + 1) / 7);
+    return `${target.getFullYear()}-W${pad2(weekNum)}`;
+}
+
+function periodKey(cadence, date = new Date()) {
+    if (cadence === "daily") {
+        return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+    }
+    if (cadence === "monthly") {
+        return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}`;
+    }
+    return isoWeekKey(date);
+}
+
+function loadRoutineState() {
+    try {
+        return JSON.parse(localStorage.getItem(ROUTINE_STORAGE_KEY) || "{}");
+    } catch (error) {
+        return {};
+    }
+}
+
+function saveRoutineState(state) {
+    localStorage.setItem(ROUTINE_STORAGE_KEY, JSON.stringify(state));
+}
+
+function renderRoutineItem(item, cadence, state) {
+    const checked = state[item.id] === periodKey(cadence);
+    return `
+        <label class="routine-item ${checked ? "is-done" : ""}">
+            <input type="checkbox" data-routine-id="${escapeHtml(item.id)}" data-cadence="${escapeHtml(cadence)}" ${checked ? "checked" : ""}>
+            <span>${escapeHtml(item.label)}</span>
+        </label>
+    `;
+}
+
+function renderRoutineCount(id, items, cadence, state) {
+    const done = items.filter((item) => state[item.id] === periodKey(cadence)).length;
+    setText(id, `${done} / ${items.length}`);
+}
+
+function renderRoutines() {
+    const routines = profile.routines;
+    if (!routines) {
+        return;
+    }
+
+    const state = loadRoutineState();
+
+    const dailyContainer = document.getElementById("routineDaily");
+    dailyContainer.innerHTML = Object.entries(routines.daily)
+        .map(
+            ([groupKey, items]) => `
+                <div class="routine-group">
+                    <h5 class="routine-group-title">${escapeHtml(ROUTINE_GROUP_LABEL[groupKey]?.[currentLanguage] ?? groupKey)}</h5>
+                    ${items.map((item) => renderRoutineItem(item, "daily", state)).join("")}
+                </div>
+            `
+        )
+        .join("");
+    renderRoutineCount("routineDailyCount", Object.values(routines.daily).flat(), "daily", state);
+
+    document.getElementById("routineWeekly").innerHTML = routines.weekly
+        .map((item) => renderRoutineItem(item, "weekly", state))
+        .join("");
+    renderRoutineCount("routineWeeklyCount", routines.weekly, "weekly", state);
+
+    document.getElementById("routineMonthly").innerHTML = routines.monthly
+        .map((item) => renderRoutineItem(item, "monthly", state))
+        .join("");
+    renderRoutineCount("routineMonthlyCount", routines.monthly, "monthly", state);
+}
+
+function setupRoutines() {
+    const dashboard = document.getElementById("dashboard");
+    dashboard.addEventListener("change", (event) => {
+        const checkbox = event.target.closest("input[data-routine-id]");
+        if (!checkbox) {
+            return;
+        }
+
+        const state = loadRoutineState();
+        const id = checkbox.dataset.routineId;
+        const cadence = checkbox.dataset.cadence;
+
+        if (checkbox.checked) {
+            state[id] = periodKey(cadence);
+        } else {
+            delete state[id];
+        }
+
+        saveRoutineState(state);
+        renderRoutines();
+    });
+}
+
 function renderContact() {
     const contactCard = document.getElementById("contactCard");
     const site = profile.site;
@@ -377,6 +490,7 @@ function renderPage() {
     renderHero();
     renderFocusAreas();
     renderRoadmap();
+    renderRoutines();
     renderProjects();
     renderResearch();
     renderExperience();
@@ -482,6 +596,7 @@ function initialize() {
     setupLanguageSwitch();
     setupNavigation();
     setupReveal();
+    setupRoutines();
 }
 
 initialize();

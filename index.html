@@ -31,23 +31,33 @@
 
     <main>
         <section id="hero" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-copy reveal">
-                    <p class="eyebrow" id="heroEyebrow">GitHub Light Portfolio</p>
-                    <h1 id="heroName">Kwang Yong Jung</h1>
-                    <p class="hero-title" id="heroTitle">Defense AI · Radar Systems · Sensor Fusion Architect</p>
-                    <p class="hero-summary" id="heroSummary">
-                        20년 이상 레이다 체계, AI 기반 탐지/분류, Radar-EO/IR 센서 융합을 연결해 온 실전형 시스템 아키텍트입니다.
+            <div class="container hero-copy reveal">
+                <p class="eyebrow" id="heroEyebrow">GitHub Light Portfolio</p>
+                <h1 id="heroName">Kwang Yong Jung</h1>
+                <p class="hero-title" id="heroTitle">Defense AI · Radar Systems · Sensor Fusion Architect</p>
+                <p class="hero-summary" id="heroSummary">
+                    20년 이상 레이다 체계, AI 기반 탐지/분류, Radar-EO/IR 센서 융합을 연결해 온 실전형 시스템 아키텍트입니다.
+                </p>
+                <div class="hero-highlights" id="heroHighlights"></div>
+                <div class="hero-actions">
+                    <a class="button button-primary" id="heroGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
+                    <a class="button button-secondary" id="heroLinkedin" href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn 보기</a>
+                    <a class="button button-secondary" id="selectedWorkLink" href="#projects">핵심 프로젝트</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker" id="dashboardKicker">Research OS</p>
+                    <h2 id="dashboardTitle">오늘의 Defense Sensor Foundation Framework 대시보드</h2>
+                    <p class="section-lead" id="dashboardLead">
+                        Vision, 오늘/이번 주/이번 달 할 일, Phase별 진행률을 한 화면에서 확인합니다.
                     </p>
-                    <div class="hero-highlights" id="heroHighlights"></div>
-                    <div class="hero-actions">
-                        <a class="button button-primary" id="heroGithub" href="https://github.com/kwangorithm" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
-                        <a class="button button-secondary" id="heroLinkedin" href="https://www.linkedin.com/in/kwangyong-jung-a95b361a6/" target="_blank" rel="noopener noreferrer">LinkedIn 보기</a>
-                        <a class="button button-secondary" id="selectedWorkLink" href="#projects">핵심 프로젝트</a>
-                    </div>
                 </div>
 
-                <aside class="hero-panel reveal">
+                <aside class="career-signal reveal is-visible">
                     <div class="panel-topline">
                         <span class="panel-label">Career Signal</span>
                         <span class="panel-sync" id="syncDate">Updated</span>
@@ -63,31 +73,6 @@
                         </div>
                     </div>
                 </aside>
-            </div>
-        </section>
-
-        <section id="overview" class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-kicker" id="overviewKicker">Overview</p>
-                    <h2 id="overviewTitle">레이다 체계, AI, 전략형 R&D를 연결하는 커리어 허브</h2>
-                    <p class="section-lead" id="overviewLead">
-                        이력의 흐름을 밝은 톤으로 재구성해 전문 영역, 프로젝트 역할, 연구 확장성을 빠르게 파악할 수 있게 했습니다.
-                    </p>
-                </div>
-                <div class="focus-grid" id="focusGrid"></div>
-            </div>
-        </section>
-
-        <section id="roadmap" class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-kicker" id="roadmapKicker">Research OS</p>
-                    <h2 id="roadmapTitle">Defense Sensor Foundation Framework 로드맵</h2>
-                    <p class="section-lead" id="roadmapLead">
-                        2026년부터 2032년까지의 비전, Phase별 목표, 올해의 우선순위와 하지 않을 일을 하나의 실행 시스템으로 관리합니다.
-                    </p>
-                </div>
 
                 <div class="north-star-grid reveal is-visible">
                     <article class="north-star-card">
@@ -104,6 +89,38 @@
                     </article>
                 </div>
 
+                <div class="subsection-head reveal">
+                    <h3 id="routinesTitle">Today · This Week · This Month</h3>
+                    <p id="routinesLead">체크한 항목은 이 브라우저에 저장되고, 주기가 바뀌면 자동으로 초기화됩니다.</p>
+                </div>
+                <div class="routine-grid">
+                    <article class="routine-card">
+                        <div class="routine-card-head">
+                            <h4>Daily</h4>
+                            <span class="routine-count" id="routineDailyCount"></span>
+                        </div>
+                        <div class="routine-groups" id="routineDaily"></div>
+                    </article>
+                    <article class="routine-card">
+                        <div class="routine-card-head">
+                            <h4>Weekly</h4>
+                            <span class="routine-count" id="routineWeeklyCount"></span>
+                        </div>
+                        <div class="routine-list" id="routineWeekly"></div>
+                    </article>
+                    <article class="routine-card">
+                        <div class="routine-card-head">
+                            <h4>Monthly</h4>
+                            <span class="routine-count" id="routineMonthlyCount"></span>
+                        </div>
+                        <div class="routine-list" id="routineMonthly"></div>
+                    </article>
+                </div>
+
+                <div class="subsection-head reveal">
+                    <h3>Phase Progress</h3>
+                    <p>2026 - 2032 Defense Sensor Foundation Framework 로드맵</p>
+                </div>
                 <div class="phase-list" id="roadmapPhases"></div>
 
                 <div class="roadmap-split">
@@ -125,7 +142,20 @@
             </div>
         </section>
 
-        <section id="projects" class="section section-surface">
+        <section id="overview" class="section section-surface">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker" id="overviewKicker">Overview</p>
+                    <h2 id="overviewTitle">레이다 체계, AI, 전략형 R&D를 연결하는 커리어 허브</h2>
+                    <p class="section-lead" id="overviewLead">
+                        이력의 흐름을 밝은 톤으로 재구성해 전문 영역, 프로젝트 역할, 연구 확장성을 빠르게 파악할 수 있게 했습니다.
+                    </p>
+                </div>
+                <div class="focus-grid" id="focusGrid"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="projectsKicker">Selected Projects</p>
@@ -138,7 +168,7 @@
             </div>
         </section>
 
-        <section id="research" class="section">
+        <section id="research" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="researchKicker">Research Agenda</p>
@@ -151,7 +181,7 @@
             </div>
         </section>
 
-        <section id="timeline" class="section section-surface">
+        <section id="timeline" class="section">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="timelineKicker">Timeline</p>
@@ -188,7 +218,7 @@
             </div>
         </section>
 
-        <section id="publications" class="section">
+        <section id="publications" class="section section-surface">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-kicker" id="publicationsKicker">Publications & Writing</p>
